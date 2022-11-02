@@ -1,5 +1,10 @@
 # Progress Website
 
+My personal website, using:
+- Javascript
+- ReactJS
+- Next 12
+- Tailwind
 
 ```bash
 npm run dev
