@@ -17,7 +17,6 @@ export default function Homepage({ data }) {
           <Link href="/oasis" className="grow h-1/4 p-8 ">
             <a aria-label="To Oasis">
               <video
-                alt="Video of a star as a link, to the Oasis page."
                 src={require("../public/star.mp4")}
                 muted
                 autoPlay
@@ -58,7 +57,7 @@ export default function Homepage({ data }) {
         <div className="text-white flex self-start md:mb-10 md:self-center pl-4 md:pl-0  md:items-center flex-col justify-end">
           <h1 className="font-rajdhani font-light text-2xl">PROGRESS</h1>
           <h2 className="text-[#FFD600] font-rajdhani font-light text-sm">
-            forward or onward movement towards a destination
+            Do you have a destination, do you believe you will get there?
           </h2>
         </div>
       </div>
