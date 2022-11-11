@@ -48,7 +48,7 @@ export default function Homepage({ data }) {
                   Twitch
                 </a>
               </Link>
-              <Link href="https://discord.gg/wVxJ45XkGP">
+              <Link href="https://discord.gg/Xp6HZXN6vq">
                 <a target="_blank" aria-label="Discord">
                   Discord
                 </a>
