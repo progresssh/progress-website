@@ -48,6 +48,11 @@ export default function Homepage({ data }) {
                   Twitch
                 </a>
               </Link>
+              <Link href="https://discord.gg/wVxJ45XkGP">
+                <a target="_blank" aria-label="Discord">
+                  Discord
+                </a>
+              </Link>
               <Link href="mailto:star@progress.sh">
                 <a aria-label="Email">star@progress.sh</a>
               </Link>
