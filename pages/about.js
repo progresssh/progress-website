@@ -50,7 +50,7 @@ export default function About() {
                 </p>
 
                 <p>
-                  Don&apos; let go. <br />
+                  Don&apos;t let go. <br />
                   Don&apos;t forget.
                   <br />
                   Walk towards the future.
