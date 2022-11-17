@@ -24,7 +24,8 @@
     "slate": "^0.81.1",
     "slate-history": "^0.66.0",
     "slate-react": "^0.81.0",
-    "unified": "^10.1.2"
+    "unified": "^10.1.2",
+    "webpack": "^5.75.0"
   },
   "devDependencies": {
     "autoprefixer": "^10.4.7",
