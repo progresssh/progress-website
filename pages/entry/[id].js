@@ -43,6 +43,7 @@ const Entry = (props) => {
               <article className="pt-8 pb-8 font-opensans leading-normal text-[0.87rem] md:text-[1.00rem]">
                 {content?.map((paragraph) => {
                   if (paragraph === "") {
+                    // eslint-disable-next-line
                     return <br />;
                   }
                   return <p key={paragraph}>{paragraph}</p>;
