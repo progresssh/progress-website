@@ -9,8 +9,8 @@ export default function Homepage({ data }) {
   return (
     <Layout title={title}>
       <div className="flex h-full flex-col p-2 md:p-0 justify-center bg-[#090909]">
-        <div className="flex flex-col  h-full mb-4 md:flex-row md:justify-evenly justify-center items-center  ">
-          <div className="w-11/12 text-white flex flex-col  text-sm md:w-40 h-1/4  md:m-0 self-center break-words justify-center  font-quantico ">
+        <div className="flex flex-col  h-full md:mb-4 md:flex-row md:justify-evenly justify-center items-center  ">
+          <div className="w-11/12 text-white flex flex-col text-sm md:w-40  md:m-0 self-center break-words justify-center  font-quantico ">
             <h2 className="text-[#FFD600] text-xs">journal</h2>
             <PaginatedList data={data} />
           </div>
@@ -29,8 +29,8 @@ export default function Homepage({ data }) {
           </Link>
           <div className="flex flex-col pl-4 md:h-auto text-sm md:m-0 md:w-40 self-start md:self-center font-quantico">
             <h3 className="text-[#FFD600] text-xs">information</h3>
-            <div className="text-white flex flex-col flex-grow md:flex-col space-y-4 md:space-y-2 ">
-              <div className="space-x-10">
+            <div className="text-white flex flex-col flex-grow md:flex-col space-y-2 md:space-y-2 ">
+              <div className="space-x-10 md:flex md:flex-col md:space-x-0 md:space-y-2 ">
                 <Link href="/about">
                   <a aria-label="About Page">About</a>
                 </Link>
@@ -45,7 +45,7 @@ export default function Homepage({ data }) {
                   </a>
                 </Link>
               </div>
-              <div className="space-x-10">
+              <div className="space-x-8 md:flex md:flex-col md:space-x-0 md:space-y-2">
                 <Link href="https://twitch.tv/progress_sh">
                   <a target="_blank" aria-label="Twitch">
                     Twitch
@@ -65,7 +65,7 @@ export default function Homepage({ data }) {
         </div>
         <div className="text-white flex self-start md:mb-10 md:self-center pl-4 md:pl-0  md:items-center flex-col justify-end">
           <h1 className="font-rajdhani font-light text-2xl">PROGRESS</h1>
-          <h2 className="text-[#FFD600] font-rajdhani font-light text-sm">
+          <h2 className="text-[#FFD600] font-rajdhani font-light text-xs md:text-sm">
             Do you have a destination, do you believe you will get there?
           </h2>
         </div>
