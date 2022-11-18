@@ -1,14 +1,20 @@
 import React, { useEffect, useState } from "react";
 import ReactPaginate from "react-paginate";
 import Link from "next/link";
+import { compareDesc } from "date-fns";
 
 // Example items, to simulate fetching from another resources.
 
 function Items({ currentItems }) {
+  console.log();
+  const sortedCurrentItems = currentItems.sort((a, b) =>
+    compareDesc(a.time, b.time)
+  );
+
   return (
     <>
       <ul className="space-y-3">
-        {currentItems?.map((post) => (
+        {sortedCurrentItems?.map((post) => (
           <li key={post.key}>
             <Link href={"entry/" + post.key}>
               <a>{post.title}</a>
@@ -21,8 +27,6 @@ function Items({ currentItems }) {
 }
 
 function PaginatedItems({ itemsPerPage, data }) {
-  
-
   // We start with an empty list of items.
   const [currentItems, setCurrentItems] = useState(null);
   const [pageCount, setPageCount] = useState(0);
@@ -31,7 +35,6 @@ function PaginatedItems({ itemsPerPage, data }) {
   const [itemOffset, setItemOffset] = useState(0);
 
   useEffect(() => {
-
     // Fetch items from another resources.
     const endOffset = itemOffset + itemsPerPage;
     console.log(`Loading items from ${itemOffset} to ${endOffset}`);
