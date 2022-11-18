@@ -2,7 +2,7 @@ import { initializeApp } from "firebase/app";
 import { getFirestore } from "firebase/firestore";
 
 const firebaseConfig = {
-  apiKey: process.env.FIREBASE_KEY,
+  apiKey: next.env.NEXT_PUBLIC_FIREBASE_KEY,
   authDomain: "progress-sh-6b6d6.firebaseapp.com",
   projectId: "progress-sh-6b6d6",
   storageBucket: "progress-sh-6b6d6.appspot.com",
