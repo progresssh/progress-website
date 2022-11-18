@@ -6,15 +6,10 @@ import { compareDesc } from "date-fns";
 // Example items, to simulate fetching from another resources.
 
 function Items({ currentItems }) {
-  console.log();
-  const sortedCurrentItems = currentItems.sort((a, b) =>
-    compareDesc(a.time, b.time)
-  );
-
   return (
     <>
       <ul className="space-y-3">
-        {sortedCurrentItems?.map((post) => (
+        {currentItems?.map((post) => (
           <li key={post.key}>
             <Link href={"entry/" + post.key}>
               <a>{post.title}</a>
@@ -36,6 +31,7 @@ function PaginatedItems({ itemsPerPage, data }) {
 
   useEffect(() => {
     // Fetch items from another resources.
+    data.sort((a, b) => compareDesc(a.time, b.time));
     const endOffset = itemOffset + itemsPerPage;
     console.log(`Loading items from ${itemOffset} to ${endOffset}`);
     setCurrentItems(data.slice(itemOffset, endOffset));
