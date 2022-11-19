@@ -8,7 +8,7 @@ import { compareDesc } from "date-fns";
 function Items({ currentItems }) {
   return (
     <>
-      <ul className="space-y-3">
+      <ul className="space-y-3 h-3/6">
         {currentItems?.map((post) => (
           <li key={post.key}>
             <Link href={"entry/" + post.key}>
@@ -57,7 +57,7 @@ function PaginatedItems({ itemsPerPage, data }) {
         pageCount={pageCount}
         previousLabel="<<-"
         renderOnZeroPageCount={null}
-        className="flex justify-between items-center h-10 md:"
+        className="flex justify-between items-center h-10 pt-4"
         pageLinkClassName=""
         activeClassName="text-[#FFD600]"
       />
