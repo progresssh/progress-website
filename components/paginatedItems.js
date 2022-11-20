@@ -49,18 +49,18 @@ function PaginatedItems({ itemsPerPage, data }) {
 
   return (
     <>
-      <Items currentItems={currentItems} />
       <ReactPaginate
         breakLabel="..."
-        nextLabel="->>"
+        nextLabel=">"
         onPageChange={handlePageClick}
         pageCount={pageCount}
-        previousLabel="<<-"
+        previousLabel="<"
         renderOnZeroPageCount={null}
-        className="flex justify-between items-center h-10 pt-4"
+        className="flex justify-between items-center h-10 "
         pageLinkClassName=""
         activeClassName="text-[#FFD600]"
       />
+      <Items currentItems={currentItems} />
     </>
   );
 }

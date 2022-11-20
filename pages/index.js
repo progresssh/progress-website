@@ -9,7 +9,7 @@ export default function Homepage({ data }) {
   return (
     <Layout title={title}>
       <div className="flex h-full flex-col p-2 md:p-0 justify-center bg-[#090909]">
-        <div className="flex flex-col  h-full md:mb-4 md:flex-row md:justify-evenly justify-center items-center  ">
+        <div className="flex flex-col  h-full md:mb-4 md:flex-row md:justify-evenly justify-between items-center  ">
           <div className="w-11/12 text-white flex flex-col text-sm md:w-32 h-1/4 md:m-0 self-center break-words justify-center  font-quantico ">
             <h2 className="text-[#FFD600] text-xs">journal</h2>
             <PaginatedList data={data} />
@@ -27,7 +27,7 @@ export default function Homepage({ data }) {
               />
             </a>
           </Link>
-          <div className="flex flex-col pl-4 md:h-auto text-sm md:m-0 md:w-40 self-start md:self-center font-quantico">
+          <div className="flex flex-col pl-4 pb-4 md:pb-0 md:h-auto text-sm md:m-0 md:w-40 self-start md:self-center font-quantico">
             <h3 className="text-[#FFD600] text-xs">information</h3>
             <div className="text-white flex flex-col flex-grow md:flex-col space-y-2 md:space-y-2 ">
               <div className="space-x-10 md:flex md:flex-col md:space-x-0 md:space-y-2 ">
