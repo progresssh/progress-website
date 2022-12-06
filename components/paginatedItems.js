@@ -65,6 +65,6 @@ function PaginatedItems({ itemsPerPage, data }) {
   );
 }
 
-export default function PaginatedList({ data }) {
-  return <PaginatedItems itemsPerPage={3} data={data} />;
+export default function PaginatedList({ data, items }) {
+  return <PaginatedItems itemsPerPage={items} data={data} />;
 }
