@@ -10,8 +10,8 @@ function RedirectToHome({ data }) {
   return (
     <Layout title={title}>
       <div className="flex h-full flex-col p-8 items-center bg-[#090909]">
-        <Link href="/oasis" className="grow h-1/4">
-          <a aria-label="To Oasis">
+        <Link href="/" className="grow h-1/4">
+          <a aria-label="To Home">
             <video
               src={require("../../public/star.mp4")}
               muted
