@@ -31,17 +31,24 @@ export default function Homepage({ data }) {
             <h3 className="text-[#FFD600] text-xs">information</h3>
             <div className="text-white flex flex-col flex-grow md:flex-col space-y-2 md:space-y-2 ">
               <div className="space-x-10 md:flex md:flex-col md:space-x-0 md:space-y-2 ">
-                <Link href="/about">
-                  <a aria-label="About Page">About</a>
+                <Link href="https://discord.gg/Xp6HZXN6vq">
+                  <a target="_blank" aria-label="Discord">
+                    Discord
+                  </a>
+                </Link>
+                <Link href="https://progresssh.substack.com/">
+                  <a target="_blank" aria-label="Newsletter">
+                    Newsletter
+                  </a>
                 </Link>
                 <Link href="https://twitter.com/progress_sh_">
                   <a target="_blank" aria-label="Twitter">
                     Twitter
                   </a>
                 </Link>
-                <Link href="https://progresssh.substack.com/">
-                  <a target="_blank" aria-label="Newsletter">
-                    Newsletter
+                <Link href="https://www.instagram.com/progress_sh_/">
+                  <a target="_blank" aria-label="Instagram">
+                    Instagram
                   </a>
                 </Link>
               </div>
@@ -51,10 +58,8 @@ export default function Homepage({ data }) {
                     Twitch
                   </a>
                 </Link>
-                <Link href="https://discord.gg/Xp6HZXN6vq">
-                  <a target="_blank" aria-label="Discord">
-                    Discord
-                  </a>
+                <Link href="/about">
+                  <a aria-label="About Page">About</a>
                 </Link>
                 <Link href="mailto:star@progress.sh">
                   <a aria-label="Email">star@progress.sh</a>
