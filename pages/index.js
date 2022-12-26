@@ -71,7 +71,7 @@ export default function Homepage({ data }) {
         <div className="text-white flex self-start md:mb-10 md:self-center pl-4 md:pl-0  md:items-center flex-col justify-end">
           <h1 className="font-rajdhani font-light text-2xl">PROGRESS</h1>
           <h2 className="text-[#FFD600] font-rajdhani font-light text-xs md:text-sm">
-            Do you have a destination, do you believe you will get there?
+            Let&apos;s all do our best.
           </h2>
         </div>
       </div>
