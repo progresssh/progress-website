@@ -6,6 +6,7 @@ import Layout from "../../components/layout";
 import Masonry from "react-masonry-css";
 import WriteModal from "../../components/oasis/writeModal";
 import Link from "next/link";
+import { fromUnixTime } from "date-fns";
 
 const encouragement = [
   "I'd love it if we'd make it.",
@@ -17,7 +18,7 @@ const encouragement = [
   "You are your own person.",
   "You're not perfect, but you've got a lot to give. So remember, I'll always be cheering you on.",
   "If you're invisible, who will find you?",
-  "You're going to be all right. You just stumbled over a stone in the road. It means nothing. Your goal lies far beyond this. Doesn't it? I'm sure you'll overcome this. You'll walk again.",
+  "You're going to be all righ. You just stumbled over a stone in the road. It means nothing. Your goal lies far beyond this. Doesn't it? I'm sure you'll overcome this. You'll walk again.",
   "Because people don't have wings, we look for ways to fly.",
   "Stars only shine when they're set against the night.",
 ];
@@ -29,12 +30,15 @@ const randomEncouragement = () => {
 
 const Posts = ({ data }) => {
   const breakpointColumnsObj = {
-    default: 3,
-    1100: 2,
+    default: 4,
+    1100: 3,
     700: 1,
   };
+  const shuffledArray = data.sort(
+    (a, b) => fromUnixTime(b.time) - fromUnixTime(a.time)
+  );
 
-  const cards = data.map((post) => {
+  const cards = shuffledArray.map((post) => {
     return <Card key={post.key} post={post} />;
   });
 
