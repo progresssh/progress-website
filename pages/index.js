@@ -30,36 +30,12 @@ export default function Homepage({ data }) {
           <div className="flex flex-col pl-4 pb-4 md:pb-0 md:h-auto text-sm md:m-0 md:w-40 self-start md:self-center font-quantico">
             <h3 className="text-[#FFD600] text-xs">information</h3>
             <div className="text-white flex flex-col flex-grow md:flex-col space-y-2 md:space-y-2 ">
-              <div className="space-x-10 md:flex md:flex-col md:space-x-0 md:space-y-2 ">
-                <Link href="https://discord.gg/Xp6HZXN6vq">
-                  <a target="_blank" aria-label="Discord">
-                    Discord
-                  </a>
-                </Link>
-                <Link href="https://progresssh.substack.com/">
-                  <a target="_blank" aria-label="Newsletter">
-                    Newsletter
-                  </a>
-                </Link>
-                <Link href="https://twitter.com/progress_sh_">
-                  <a target="_blank" aria-label="Twitter">
-                    Twitter
-                  </a>
-                </Link>
-                <Link href="https://www.instagram.com/progress_sh_/">
-                  <a target="_blank" aria-label="Instagram">
-                    Instagram
-                  </a>
-                </Link>
-              </div>
               <div className="space-x-8 md:flex md:flex-col md:space-x-0 md:space-y-2">
-                <Link href="https://twitch.tv/progress_sh">
-                  <a target="_blank" aria-label="Twitch">
-                    Twitch
-                  </a>
-                </Link>
                 <Link href="/about">
                   <a aria-label="About Page">About</a>
+                </Link>
+                <Link href="https://secondsight.app">
+                  <a aria-label="Second Sight">Second Sight</a>
                 </Link>
                 <Link href="mailto:star@progress.sh">
                   <a aria-label="Email">star@progress.sh</a>
