@@ -1,5 +1,3 @@
-const { fontFamily } = require("tailwindcss/defaultTheme");
-
 /** @type {import('tailwindcss').Config} */
 module.exports = {
   content: [
@@ -8,10 +6,9 @@ module.exports = {
   ],
   theme: {
     fontFamily: {
-      quantico: "var(--quantico-font)",
-      rajdhani: "var(--rajdhani-font)",
-      opensans: "var(--opensans-font)",
-      sans: "var(--opensans-font)",
+      quantico: ["'Quantico', sans-serif;"],
+      rajdhani: ["'Rajdhani', sans-serif;"],
+      opensans: ["'Open Sans', sans-serif;"],
     },
 
     extend: {},
