@@ -11,9 +11,7 @@ function Items({ currentItems }) {
       <ul className="space-y-3 h-3/6">
         {currentItems?.map((post) => (
           <li key={post.key}>
-            <Link href={"entry/" + post.key}>
-              <a>{post.title}</a>
-            </Link>
+            <Link href={"entry/" + post.key}>{post.title}</Link>
           </li>
         ))}
       </ul>

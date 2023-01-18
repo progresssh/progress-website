@@ -18,7 +18,7 @@ const encouragement = [
   "You are your own person.",
   "You're not perfect, but you've got a lot to give. So remember, I'll always be cheering you on.",
   "If you're invisible, who will find you?",
-  "You're going to be all righ. You just stumbled over a stone in the road. It means nothing. Your goal lies far beyond this. Doesn't it? I'm sure you'll overcome this. You'll walk again.",
+  "You're going to be all right. You just stumbled over a stone in the road. It means nothing. Your goal lies far beyond this. Doesn't it? I'm sure you'll overcome this. You'll walk again.",
   "Because people don't have wings, we look for ways to fly.",
   "Stars only shine when they're set against the night.",
 ];
@@ -64,10 +64,8 @@ const Header = () => {
 
   return (
     <div className="flex flex-col justify-center m-4 ">
-      <Link href="/">
-        <a aria-label="Back to home">
-          <h1 className="font-quantico text-xl">OASIS</h1>
-        </a>
+      <Link href="/" aria-label="Back to home">
+        <h1 className="font-quantico text-xl">OASIS</h1>
       </Link>
 
       <h2 className="font-quantico text-base italic">{quote}</h2>

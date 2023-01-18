@@ -14,31 +14,38 @@ export default function Homepage({ data }) {
             <h2 className="text-[#FFD600] text-xs">journal</h2>
             <PaginatedList data={data} items={3} />
           </div>
-          <Link href="/oasis" className="grow h-1/4 p-8 ">
-            <a aria-label="To Oasis">
-              <video
-                src={require("../public/star.mp4")}
-                muted
-                autoPlay
-                loop
-                playsInline
-                height={480}
-                width={480}
-              />
-            </a>
+          <Link href="/oasis" aria-label="To Oasis">
+            <video
+              className="grow h-1/4 p-8 "
+              src={require("../public/star.mp4")}
+              muted
+              autoPlay
+              loop
+              playsInline
+              height={480}
+              width={480}
+            />
           </Link>
           <div className="flex flex-col pl-4 pb-4 md:pb-0 md:h-auto text-sm md:m-0 md:w-40 self-start md:self-center font-quantico">
             <h3 className="text-[#FFD600] text-xs">information</h3>
             <div className="text-white flex flex-col flex-grow md:flex-col space-y-2 md:space-y-2 ">
               <div className="space-x-8 md:flex md:flex-col md:space-x-0 md:space-y-2">
-                <Link href="/about">
-                  <a aria-label="About Page">About</a>
+                <Link href="/about" aria-label="About Page">
+                  About
                 </Link>
-                <Link href="https://secondsight.app">
-                  <a aria-label="Second Sight">Second Sight</a>
+                <Link
+                  href="https://secondsight.app"
+                  aria-label="Second Sight"
+                  target="_blank"
+                >
+                  Second Sight
                 </Link>
-                <Link href="mailto:star@progress.sh">
-                  <a aria-label="Email">star@progress.sh</a>
+                <Link
+                  href="mailto:star@progress.sh"
+                  aria-label="Email"
+                  target="_blank"
+                >
+                  star@progress.sh
                 </Link>
               </div>
             </div>

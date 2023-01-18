@@ -11,10 +11,10 @@ const Form = () => {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
+    setError(false);
     setIsSubmitting(true);
     try {
       await signIn(email, password);
-      setError(false);
     } catch (error) {
       setError(error);
     }

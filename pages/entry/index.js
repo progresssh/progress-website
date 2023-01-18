@@ -10,18 +10,16 @@ function RedirectToHome({ data }) {
   return (
     <Layout title={title}>
       <div className="flex h-full flex-col p-8 items-center bg-[#090909]">
-        <Link href="/" className="grow h-1/4">
-          <a aria-label="To Home">
-            <video
-              src={require("../../public/star.mp4")}
-              muted
-              autoPlay
-              loop
-              playsInline
-              height={128}
-              width={128}
-            />
-          </a>
+        <Link href="/" className="grow h-1/4" aria-label="To Home">
+          <video
+            src={require("../../public/star.mp4")}
+            muted
+            autoPlay
+            loop
+            playsInline
+            height={128}
+            width={128}
+          />
         </Link>
         <div className=" text-white flex flex-col text-sm items-center pt-4 h-1/4 break-words w-1/2 font-quantico">
           <h2 className="text-[#FFD600] text-base">journal</h2>
