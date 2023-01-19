@@ -16,7 +16,7 @@ export default function Homepage({ data }) {
           </div>
           <Link href="/oasis" aria-label="To Oasis">
             <video
-              className="grow h-1/4 p-8 "
+              className="grow p-8"
               src={require("../public/star.mp4")}
               muted
               autoPlay
