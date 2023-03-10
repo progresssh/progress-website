@@ -1,7 +1,7 @@
 # Progress Website
 
 My personal website, using:
-- Javascript
+- Javascript/Typescript
 - ReactJS
 - Next 12
 - Tailwind
