@@ -1,15 +1,15 @@
-import { useState } from "react";
+import { FormEvent, useState } from "react";
 import { useAuth } from "./contexts/userContext";
 
 const Form = () => {
-  const [email, setEmail] = useState();
-  const [password, setPassword] = useState();
+  const [email, setEmail] = useState<string | null>(null);
+  const [password, setPassword] = useState<string | null>(null);
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [error, setError] = useState(false);
 
   const { signIn, isProgress } = useAuth();
 
-  const handleSubmit = async (e) => {
+  const handleSubmit = async (e: FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     setError(false);
     setIsSubmitting(true);

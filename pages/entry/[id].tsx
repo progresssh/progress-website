@@ -3,8 +3,9 @@ import { collection, doc, getDoc, getDocs } from "firebase/firestore";
 import Link from "next/link";
 import Layout from "../../components/layout";
 import { db } from "../../firebase";
+import { journalPost } from "../../types/journalPost";
 
-const Entry = (props) => {
+const Entry = (props: journalPost) => {
   const content = props.content;
   const title = props.title;
   const time = fromUnixTime(props.time);

@@ -6,7 +6,8 @@ import Layout from "../../components/layout";
 import Masonry from "react-masonry-css";
 import WriteModal from "../../components/oasis/writeModal";
 import Link from "next/link";
-import { fromUnixTime } from "date-fns";
+import { GetStaticProps } from "next";
+import { journalPost } from "../../types/journalPost";
 
 const encouragement = [
   "I'd love it if we'd make it.",
@@ -14,7 +15,7 @@ const encouragement = [
   "No matter where you go, everyone's connected.",
   "Beyond that unreachable, radiant horizon.",
   "You've made it this far, right?",
-  "You are infinite, you can go as far as you’d like.",
+  "You are infinite, you can go as far as you'd like.",
   "You are your own person.",
   "You're not perfect, but you've got a lot to give. So remember, I'll always be cheering you on.",
   "If you're invisible, who will find you?",
@@ -28,15 +29,14 @@ const randomEncouragement = () => {
   return result;
 };
 
-const Posts = ({ data }) => {
+const Posts = ({ data }: { data: OasisPost[] }) => {
   const breakpointColumnsObj = {
     default: 4,
     1100: 3,
     700: 1,
   };
-  const shuffledArray = data.sort(
-    (a, b) => fromUnixTime(b.time) - fromUnixTime(a.time)
-  );
+
+  const shuffledArray = data.sort((a, b) => b.time - a.time);
 
   const cards = shuffledArray.map((post) => {
     return <Card key={post.key} post={post} />;
@@ -73,7 +73,7 @@ const Header = () => {
   );
 };
 
-export default function Oasis({ data }) {
+export default function Oasis({ data }: { data: OasisPost[] }) {
   return (
     <div className="m-2">
       <Layout title={"Oasis"}>
@@ -85,16 +85,16 @@ export default function Oasis({ data }) {
   );
 }
 
-export async function getStaticProps() {
-  const data = [];
+export const getStaticProps: GetStaticProps = async () => {
+  const data: OasisPost[] = [];
 
   const querySnapshot = await getDocs(collection(db, "oasis"));
   querySnapshot.forEach((doc) => {
-    const newData = { key: doc.id, ...doc.data() };
+    const newData = { key: doc.id, ...doc.data() } as OasisPost;
     data.push(newData);
   });
 
   return {
     props: { data },
   };
-}
+};

@@ -2,14 +2,13 @@ import React, { useEffect, useState } from "react";
 import ReactPaginate from "react-paginate";
 import Link from "next/link";
 import { compareDesc } from "date-fns";
-
-// Example items, to simulate fetching from another resources.
+import { journalPost } from "../types/journalPost";
 
 function Items({ currentItems }) {
   return (
     <>
       <ul className="space-y-3 h-3/6">
-        {currentItems?.map((post) => (
+        {currentItems?.map((post: journalPost) => (
           <li key={post.key}>
             <Link href={"entry/" + post.key}>{post.title}</Link>
           </li>

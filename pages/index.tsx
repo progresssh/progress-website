@@ -3,8 +3,10 @@ import { collection, getDocs } from "firebase/firestore";
 import Link from "next/link";
 import Layout from "../components/layout";
 import PaginatedList from "../components/paginatedItems";
+import { GetStaticProps } from "next";
+import { journalPost } from "../types/journalPost";
 
-export default function Homepage({ data }) {
+export default function Homepage({ data }: { data: journalPost }) {
   const title = "Progress";
   return (
     <Layout title={title}>
@@ -62,16 +64,16 @@ export default function Homepage({ data }) {
   );
 }
 
-export async function getStaticProps() {
-  const data = [];
+export const getStaticProps: GetStaticProps = async () => {
+  const data: journalPost[] = [];
 
   const querySnapshot = await getDocs(collection(db, "journal"));
   querySnapshot.forEach((doc) => {
-    const newData = { key: doc.id, ...doc.data() };
+    const newData = { key: doc.id, ...doc.data() } as journalPost;
     data.push(newData);
   });
 
   return {
     props: { data },
   };
-}
+};

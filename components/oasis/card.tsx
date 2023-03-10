@@ -1,6 +1,6 @@
 import { format, fromUnixTime } from "date-fns";
 
-const Card = ({ post }) => {
+const Card = ({ post }: { post: OasisPost }) => {
   const content = post.content;
   const name = post.name;
   const time = fromUnixTime(post.time);

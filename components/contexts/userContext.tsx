@@ -3,18 +3,19 @@ import {
   getAuth,
   onAuthStateChanged,
   signInWithEmailAndPassword,
+  User,
 } from "firebase/auth";
 import { doc, setDoc } from "firebase/firestore";
 import { createContext, useContext, useEffect, useState } from "react";
 import app, { db } from "../../firebase";
 
-const AuthContext = createContext();
+const AuthContext = createContext(null);
 const auth = getAuth(app);
 
 export const useAuth = () => useContext(AuthContext);
 
 const AuthProvider = ({ children }) => {
-  const [currentUser, setCurrentUser] = useState();
+  const [currentUser, setCurrentUser] = useState<User | null>();
   const [isProgress, setIsProgress] = useState(false);
 
   const postDocument = async (post) => {

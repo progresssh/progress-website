@@ -1,7 +1,7 @@
 import { Dialog } from "@headlessui/react";
 import { getUnixTime } from "date-fns";
 import { addDoc, collection } from "firebase/firestore";
-import { useRef, useState } from "react";
+import { ChangeEvent, FormEvent, useRef, useState } from "react";
 import { db } from "../../firebase";
 import PlainTextEditor from "../plainText";
 
@@ -21,7 +21,7 @@ export default function WriteModal() {
 
   const inputRef = useRef();
 
-  const handleForm = async (e) => {
+  const handleForm = async (e: FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     const date = new Date();
     const time = getUnixTime(date);
@@ -51,7 +51,7 @@ export default function WriteModal() {
     }
   };
 
-  const handleNameChange = (e) => {
+  const handleNameChange = (e: ChangeEvent<HTMLInputElement>) => {
     e.preventDefault();
     setName(e.target.value);
   };
