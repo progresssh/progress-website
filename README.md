@@ -7,6 +7,10 @@ My personal website, using:
 - Tailwind
 
 ```bash
+npm install
+# or
+yarn install
+
 npm run dev
 # or
 yarn dev
