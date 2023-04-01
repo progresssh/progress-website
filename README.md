@@ -1,12 +1,16 @@
 # Progress Website
 
 My personal website, using:
-- Javascript
+- Javascript/Typescript
 - ReactJS
 - Next 12
 - Tailwind
 
 ```bash
+npm install
+# or
+yarn install
+
 npm run dev
 # or
 yarn dev
