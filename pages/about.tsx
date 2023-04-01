@@ -46,6 +46,14 @@ export default function About() {
                         Discord
                       </Link>
                       <Link
+                        href="https://github.com/progresssh"
+                        target="_blank"
+                        aria-label="Github"
+                        className="border-2 rounded-md p-2 border-[#FFD600]"
+                      >
+                        Github
+                      </Link>
+                      <Link
                         href="https://progresssh.substack.com/"
                         target="_blank"
                         aria-label="Newsletter"
