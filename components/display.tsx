@@ -1,9 +1,7 @@
-import { useAuth } from "./contexts/userContext";
+import { useAuth } from "./contexts/UserContext";
 
 const Display = () => {
-  const { currentUser, isLoading } = useAuth();
-
-  if (isLoading) return <h1>Entering...</h1>;
+  const { currentUser } = useAuth();
 
   return (
     <h1 className="font-rajdhani">

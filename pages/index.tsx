@@ -1,8 +1,8 @@
 import { db } from "../firebase";
 import { collection, getDocs } from "firebase/firestore";
 import Link from "next/link";
-import Layout from "../components/layout";
-import PaginatedList from "../components/paginatedItems";
+import Layout from "../components/Layout";
+import PaginatedList from "../components/PaginatedItems";
 import { GetStaticProps } from "next";
 import { journalPost } from "../types/journalPost";
 

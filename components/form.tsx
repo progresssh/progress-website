@@ -1,5 +1,5 @@
 import { FormEvent, useState } from "react";
-import { useAuth } from "./contexts/userContext";
+import { useAuth } from "./contexts/UserContext";
 
 const Form = () => {
   const [email, setEmail] = useState<string | null>(null);
@@ -52,7 +52,7 @@ const Form = () => {
 
           <div className="pt-4">
             <button type="submit" disabled={isSubmitting}>
-              {isSubmitting ? "Entering Database..." : "Sign In"}
+              {isSubmitting ? "Entering System..." : "Sign In"}
             </button>
           </div>
         </form>

@@ -14,11 +14,6 @@
     "isolatedModules": true,
     "jsx": "preserve"
   },
-  "include": [
-    "next-env.d.ts",
-    "**/*.tsx",
-    "**/*.ts",
-    "components/textEditor.js"
-  ],
+  "include": ["next-env.d.ts", "**/*.tsx", "**/*.ts"],
   "exclude": ["node_modules"]
 }

@@ -8,8 +8,9 @@ import {
 import { doc, setDoc } from "firebase/firestore";
 import { createContext, useContext, useEffect, useState } from "react";
 import app, { db } from "../../firebase";
+import { AuthInterface } from "../../types/auth";
 
-const AuthContext = createContext(null);
+const AuthContext = createContext<AuthInterface | null>(null);
 const auth = getAuth(app);
 
 export const useAuth = () => useContext(AuthContext);
