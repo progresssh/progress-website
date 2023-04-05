@@ -1,7 +1,7 @@
 import { format, fromUnixTime } from "date-fns";
 import { collection, doc, getDoc, getDocs } from "firebase/firestore";
 import Link from "next/link";
-import Layout from "../../components/layout";
+import Layout from "../../components/Layout";
 import { db } from "../../firebase";
 import { journalPost } from "../../types/journalPost";
 
