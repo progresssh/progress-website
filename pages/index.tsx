@@ -1,8 +1,8 @@
 import { db } from "../firebase";
 import { collection, getDocs } from "firebase/firestore";
 import Link from "next/link";
-import Layout from "../components/layout";
-import PaginatedList from "../components/paginatedItems";
+import Layout from "../components/Layout";
+import PaginatedList from "../components/PaginatedItems";
 import { GetStaticProps } from "next";
 import { journalPost } from "../types/journalPost";
 
@@ -23,6 +23,7 @@ export default function Homepage({ data }: { data: journalPost }) {
               muted
               autoPlay
               loop
+              disableRemotePlayback={true}
               playsInline
               height={480}
               width={480}

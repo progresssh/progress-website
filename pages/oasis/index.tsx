@@ -1,10 +1,10 @@
 import { collection, getDocs } from "firebase/firestore";
 import { db } from "../../firebase";
-import Card from "../../components/oasis/card";
+import Card from "../../components/oasis/Card";
 import { useEffect, useState } from "react";
-import Layout from "../../components/layout";
+import Layout from "../../components/Layout";
 import Masonry from "react-masonry-css";
-import WriteModal from "../../components/oasis/writeModal";
+import WriteModal from "../../components/oasis/WriteModal";
 import Link from "next/link";
 import { GetStaticProps } from "next";
 import { journalPost } from "../../types/journalPost";
