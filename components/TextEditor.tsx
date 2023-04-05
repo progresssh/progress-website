@@ -16,6 +16,7 @@ const TextEditor = () => {
       StarterKit.configure({
         gapcursor: false,
         dropcursor: false,
+        codeBlock: false,
         heading: { levels: [1, 2, 3] },
       }),
       Image,
@@ -23,26 +24,29 @@ const TextEditor = () => {
     content: "<p>Hello World! 🌎️</p>",
   });
 
-  const output = useMemo(() => {
+  const output = () => {
     if (post) {
       return generateHTML(post, [
         StarterKit.configure({
           gapcursor: false,
+          codeBlock: false,
           dropcursor: false,
           heading: { levels: [1, 2, 3] },
         }),
         Image,
       ]);
-    } else {
-      return;
     }
-  }, [post]);
+  };
 
+  console.log(output());
   return (
     <div>
       <EditorContent editor={editor} />
-      <button onClick={() => setPost(editor.getJSON)}>Get Data</button>
-      <div>{output}</div>
+      <button onClick={() => setPost(editor.getJSON())}>Get Data</button>
+      <div
+        className="prose prose-xl"
+        dangerouslySetInnerHTML={{ __html: output() }}
+      ></div>
     </div>
   );
 };
