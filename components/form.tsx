@@ -1,5 +1,5 @@
 import { FormEvent, useState } from "react";
-import { useAuth } from "./contexts/UserContext";
+import { useAuth } from "./contexts/userContext";
 
 const Form = () => {
   const [email, setEmail] = useState<string | null>(null);
