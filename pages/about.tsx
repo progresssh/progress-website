@@ -72,14 +72,6 @@ export default function About() {
                         Twitter
                       </Link>
                       <Link
-                        href="https://discord.gg/psVyFqZR66"
-                        target="_blank"
-                        aria-label="Discord"
-                        className="border-2 rounded-md p-2 border-[#FFD600]"
-                      >
-                        Discord
-                      </Link>
-                      <Link
                         href="https://twitch.tv/progress_sh"
                         target="_blank"
                         aria-label="Twitch"
