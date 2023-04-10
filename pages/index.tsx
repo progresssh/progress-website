@@ -11,24 +11,39 @@ export default function Homepage({ data }: { data: journalPost }) {
   return (
     <Layout title={title}>
       <div className="flex h-full flex-col p-2 md:p-0 justify-center bg-[#090909]">
-        <div className="flex flex-col  h-full md:mb-4 md:flex-row md:justify-evenly justify-between items-center  ">
+        <div className="flex flex-col h-full md:flex-row md:justify-evenly justify-between items-center">
           <div className="w-11/12 text-white flex flex-col text-sm md:w-32 h-1/4 md:m-0 self-center break-words justify-center  font-quantico ">
             <h2 className="text-[#FFD600] text-xs">journal</h2>
             <PaginatedList data={data} items={3} />
           </div>
-          <Link href="/oasis" aria-label="To Oasis">
-            <video
-              className="grow p-8"
-              src={require("../public/star.mp4")}
-              muted
-              autoPlay
-              loop
-              disableRemotePlayback={true}
-              playsInline
-              height={480}
-              width={480}
-            />
-          </Link>
+
+          <div className=" flex h-full md:self-center md:pl-0 md:items-center flex-col justify-center">
+            <Link
+              href="/oasis"
+              aria-label="To Oasis"
+              className="grow flex justify-center"
+            >
+              <video
+                src={require("../public/star.mp4")}
+                muted
+                autoPlay
+                loop
+                disableRemotePlayback={true}
+                playsInline
+                height={480}
+                width={480}
+              />
+            </Link>
+            <div className="md:absolute bottom-5 self-center   text-center">
+              <h1 className="font-rajdhani font-light text-2xl text-white">
+                PROGRESS
+              </h1>
+              <h2 className="text-[#FFD600] font-rajdhani font-light text-xs md:text-sm  ">
+                Let&apos;s all do our best.
+              </h2>
+            </div>
+          </div>
+
           <div className="flex flex-col pl-4 pb-4 md:pb-0 md:h-auto text-sm md:m-0 md:w-40 self-start md:self-center font-quantico">
             <h3 className="text-[#FFD600] text-xs">information</h3>
             <div className="text-white flex flex-col flex-grow md:flex-col space-y-2 md:space-y-2 ">
@@ -53,12 +68,6 @@ export default function Homepage({ data }: { data: journalPost }) {
               </div>
             </div>
           </div>
-        </div>
-        <div className="text-white flex self-start md:mb-10 md:self-center pl-4 md:pl-0  md:items-center flex-col justify-end">
-          <h1 className="font-rajdhani font-light text-2xl">PROGRESS</h1>
-          <h2 className="text-[#FFD600] font-rajdhani font-light text-xs md:text-sm">
-            Let&apos;s all do our best.
-          </h2>
         </div>
       </div>
     </Layout>
