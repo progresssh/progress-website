@@ -18,11 +18,7 @@ export default function Homepage({ data }: { data: journalPost }) {
           </div>
 
           <div className=" flex h-full md:self-center md:pl-0 md:items-center flex-col justify-center">
-            <Link
-              href="/oasis"
-              aria-label="To Oasis"
-              className="grow flex justify-center"
-            >
+            <Link href="/oasis" aria-label="To Oasis">
               <video
                 src={require("../public/star.mp4")}
                 muted
@@ -34,7 +30,7 @@ export default function Homepage({ data }: { data: journalPost }) {
                 width={480}
               />
             </Link>
-            <div className="md:absolute bottom-5 self-center   text-center">
+            <div className="md:absolute  bottom-5 self-center text-center">
               <h1 className="font-rajdhani font-light text-2xl text-white">
                 PROGRESS
               </h1>
