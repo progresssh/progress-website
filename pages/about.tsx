@@ -72,12 +72,12 @@ export default function About() {
                         Twitter
                       </Link>
                       <Link
-                        href="https://www.instagram.com/progress_sh_/"
+                        href="https://discord.gg/psVyFqZR66"
                         target="_blank"
-                        aria-label="Instagram"
+                        aria-label="Discord"
                         className="border-2 rounded-md p-2 border-[#FFD600]"
                       >
-                        Instagram
+                        Discord
                       </Link>
                       <Link
                         href="https://twitch.tv/progress_sh"
