@@ -97,12 +97,46 @@ export default function About() {
                   <main>
                     <article className="text-gray-300 font-opensans space-y-3 pt-8 leading-normal text-[0.87rem]">
                       <p>
-                        Progress is my pursuit at living life to its fullest.
+                        Progress is my pursuit at getting better at the things
+                        that are meaningful to me and my struggle to exist.
                       </p>
 
                       <p>
-                        I want to reach a higher place, to find happiness,
-                        meaning and make great things.
+                        I&apos;ve been meaning to be a programmer, a
+                        mathematician, an artist, and much more! All of these
+                        things I&apos;ve been letting get past me, convincing
+                        myself they&apos;re unattainable due to the lack of will
+                        and presence I have for my life.
+                        <br />
+                        Spending my life imagining and daydreaming about lives
+                        where I led myself to get there, instead of simply
+                        finding out.
+                      </p>
+
+                      <p>
+                        2021 was the year since I got away from my bedroom
+                        lethargy and started to work on this project. I found
+                        myself in bad shape, unable to focus for a little more
+                        than 30 minutes, lacking in energy, battling against the
+                        vicious chains wanting to get me back into the comfort
+                        of forgetting my existence. I&apos;m getting better and
+                        I wish to show myself and the world the constant
+                        improvement of my system, my life.
+                      </p>
+
+                      <p>
+                        I fell multiple times, and will fall again. And now that
+                        I have learned to stand back up, I will do so as many
+                        times as necessary.
+                      </p>
+
+                      <p>
+                        I&apos;ll show you everything, failures and success,
+                        every part of the struggle.
+                        <br />
+                        I&apos;ll walk towards that star, showing the way to my
+                        aspiration. Symbol of the misery & bliss which makes it
+                        shine.
                       </p>
 
                       <p>
@@ -112,42 +146,12 @@ export default function About() {
                         However, &quot;one day&quot; does not exist, the future
                         is only materialized by your actions.
                         <br />
-                        At this moment, this time, you hold all the keys. The
-                        littest of your steps will pave the way for the next
-                        ones.
+                        At this moment, this time, I hold all the keys. The
+                        littest of the steps I earn will pave the way for the
+                        next ones.
                       </p>
 
-                      <p>
-                        Don&apos;t let go. <br />
-                        Don&apos;t forget.
-                        <br />
-                        Walk towards the future.
-                      </p>
-
-                      <p>
-                        Find out,
-                        <br />
-                        All the beautiful things waiting there,
-                        <br />
-                        All the painful things that&apos;ll gaze back upon you.
-                        <br />
-                        Who you are now is only a small subset of all the people
-                        you&apos;ll ever be.
-                        <br />
-                        Live as you are while you&apos;re here.
-                      </p>
-
-                      <p>
-                        I&apos;ll show you everything, failures and success,
-                        every part of the struggle.
-                        <br />
-                        I&apos;ll walk towards that star, symbol of all my
-                        aspirations.
-                      </p>
-
-                      <p>
-                        You are infinite, you can go as far as you&rsquo;d like.
-                      </p>
+                      <p>The system will be kept running.</p>
                     </article>
                   </main>
                 </div>
