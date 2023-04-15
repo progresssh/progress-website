@@ -44,12 +44,31 @@ I'm looking forward to September, consolidating on the "short-comings" of August
 I'm getting there! It's a fierce fight but it's one I'm lucky to have.`;
 
 const FixedMenu = ({ editor }: { editor: Editor }) => {
+  const handleBoldButton = () => {
+    editor.chain().focus().toggleBold().run();
+  };
+  const handleItalicButton = () => {
+    editor.chain().focus().toggleItalic().run();
+  };
+  const handleStrikeButton = () => {
+    editor.chain().focus().toggleStrike().run();
+  };
+
+  const handleBulletListButton = () => {
+    editor.chain().focus().toggleBulletList().run();
+  };
   return (
     <div
       className="bg-white w-full sticky h-24
   "
     >
-      hey
+      <div className="space-x-2">
+        <button onClick={handleBoldButton}>Bold</button>
+        <button onClick={handleItalicButton}>Italic</button>
+        <button onClick={handleStrikeButton}>Strikethrough</button>
+
+        <button onClick={handleBulletListButton}>Bulletlist</button>
+      </div>
     </div>
   );
 };
@@ -58,6 +77,11 @@ const TextEditor = () => {
   const [post, setPost] = useState<JSONContent | null>(null);
 
   const editor = useEditor({
+    editorProps: {
+      attributes: {
+        class: "prose ",
+      },
+    },
     extensions: [
       StarterKit.configure({
         gapcursor: false,
@@ -84,14 +108,13 @@ const TextEditor = () => {
     }
   };
 
-  console.log(output());
   return (
-    <div>
+    <div className="">
       <FixedMenu editor={editor} />
       <EditorContent editor={editor} />
       <button onClick={() => setPost(editor.getJSON())}>Get Data</button>
       <div
-        className="prose prose-xl"
+        className="prose prose-invert"
         dangerouslySetInnerHTML={{ __html: output() }}
       ></div>
     </div>
