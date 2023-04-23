@@ -113,10 +113,6 @@ const TextEditor = () => {
       <FixedMenu editor={editor} />
       <EditorContent editor={editor} />
       <button onClick={() => setPost(editor.getJSON())}>Get Data</button>
-      <div
-        className="prose prose-invert"
-        dangerouslySetInnerHTML={{ __html: output() }}
-      ></div>
     </div>
   );
 };

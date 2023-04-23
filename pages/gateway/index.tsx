@@ -1,7 +1,7 @@
 import AuthProvider from "../../components/contexts/userContext";
 import Form from "../../components/form";
 import Layout from "../../components/layout";
-import TextEditor from "../../components/textEditor";
+import TextEditor from "../../components/TextEditor";
 
 const App = () => {
   return (

@@ -39,14 +39,11 @@ const Entry = (props: journalPost) => {
               {format(time, "dd LLLL yyyy")}
             </h2>
             <main>
-              <article className="pt-8 pb-8 font-opensans leading-normal text-[0.87rem] md:text-[1.00rem]">
-                {content?.map((paragraph) => {
-                  if (paragraph === "") {
-                    // eslint-disable-next-line
-                    return <br />;
-                  }
-                  return <p key={paragraph}>{paragraph}</p>;
-                })}
+              <article className="prose prose-invert pt-8 pb-8 font-opensans leading-normal text-[0.87rem] md:text-[1.00rem]">
+                <div
+                  className=""
+                  dangerouslySetInnerHTML={{ __html: content }}
+                ></div>
               </article>
             </main>
           </div>
