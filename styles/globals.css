@@ -24,3 +24,7 @@
   border-width: 2px;
   border-color: black;
 }
+
+.is-active {
+  font-weight: bold;
+}

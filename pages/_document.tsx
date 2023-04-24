@@ -39,7 +39,7 @@ class MyDocument extends Document {
           <meta property="og:type" content="website" />
           <meta
             property="og:image"
-            content="https://github.com/progresssh/progress-website/blob/main/public/images/arch.png"
+            content="https://pbs.twimg.com/profile_banners/1371479862314156033/1680683023/1500x500"
           ></meta>
 
           <meta name="twitter:card" content="summary_large_image" />

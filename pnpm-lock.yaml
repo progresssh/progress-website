@@ -5,7 +5,12 @@ specifiers:
   '@next/font': ^13.3.0
   '@tailwindcss/typography': ^0.5.9
   '@tiptap/core': ^2.0.3
+  '@tiptap/extension-document': ^2.0.3
   '@tiptap/extension-image': ^2.0.3
+  '@tiptap/extension-link': ^2.0.3
+  '@tiptap/extension-text': ^2.0.3
+  '@tiptap/extension-youtube': ^2.0.3
+  '@tiptap/html': ^2.0.3
   '@tiptap/pm': ^2.0.3
   '@tiptap/react': ^2.0.3
   '@tiptap/starter-kit': ^2.0.3
@@ -45,7 +50,12 @@ dependencies:
   '@next/font': 13.3.0
   '@tailwindcss/typography': 0.5.9_tailwindcss@3.3.1
   '@tiptap/core': 2.0.3_@tiptap+pm@2.0.3
+  '@tiptap/extension-document': 2.0.3_@tiptap+core@2.0.3
   '@tiptap/extension-image': 2.0.3_@tiptap+core@2.0.3
+  '@tiptap/extension-link': 2.0.3_7qxxgdyo6i4mk7xrbxa2xtsga4
+  '@tiptap/extension-text': 2.0.3_@tiptap+core@2.0.3
+  '@tiptap/extension-youtube': 2.0.3_@tiptap+core@2.0.3
+  '@tiptap/html': 2.0.3_7qxxgdyo6i4mk7xrbxa2xtsga4
   '@tiptap/pm': 2.0.3_@tiptap+core@2.0.3
   '@tiptap/react': 2.0.3_z5e47atshj3jlb5plbd4qpvzwi
   '@tiptap/starter-kit': 2.0.3_@tiptap+pm@2.0.3
@@ -1032,6 +1042,17 @@ packages:
       '@tiptap/core': 2.0.3_@tiptap+pm@2.0.3
     dev: false
 
+  /@tiptap/extension-link/2.0.3_7qxxgdyo6i4mk7xrbxa2xtsga4:
+    resolution: {integrity: sha512-H72tXQ5rkVCkAhFaf08fbEU7EBUCK0uocsqOF+4th9sOlrhfgyJtc8Jv5EXPDpxNgG5jixSqWBo0zKXQm9s9eg==}
+    peerDependencies:
+      '@tiptap/core': ^2.0.0
+      '@tiptap/pm': ^2.0.0
+    dependencies:
+      '@tiptap/core': 2.0.3_@tiptap+pm@2.0.3
+      '@tiptap/pm': 2.0.3_@tiptap+core@2.0.3
+      linkifyjs: 4.1.1
+    dev: false
+
   /@tiptap/extension-list-item/2.0.3_@tiptap+core@2.0.3:
     resolution: {integrity: sha512-p7cUsk0LpM1PfdAuFE8wYBNJ3gvA0UhNGR08Lo++rt9UaCeFLSN1SXRxg97c0oa5+Ski7SrCjIJ5Ynhz0viTjQ==}
     peerDependencies:
@@ -1070,6 +1091,25 @@ packages:
       '@tiptap/core': ^2.0.0
     dependencies:
       '@tiptap/core': 2.0.3_@tiptap+pm@2.0.3
+    dev: false
+
+  /@tiptap/extension-youtube/2.0.3_@tiptap+core@2.0.3:
+    resolution: {integrity: sha512-iZsMr+88I3hvfbJNLmiPsz2/8ZGpMucyCxRbrZGg1D6wBw4oiUhRPHzGJ3APlECzpanCjyQNMHIk/gvSDDX3ig==}
+    peerDependencies:
+      '@tiptap/core': ^2.0.0
+    dependencies:
+      '@tiptap/core': 2.0.3_@tiptap+pm@2.0.3
+    dev: false
+
+  /@tiptap/html/2.0.3_7qxxgdyo6i4mk7xrbxa2xtsga4:
+    resolution: {integrity: sha512-F0mihUTJ+mqqczHl7du9kBmani3pkwYeEuc/xls+DlYobdTzhSqIaF/ce8utHwRxTvDUPwSEM7+ITr93e2PqQA==}
+    peerDependencies:
+      '@tiptap/core': ^2.0.0
+      '@tiptap/pm': ^2.0.0
+    dependencies:
+      '@tiptap/core': 2.0.3_@tiptap+pm@2.0.3
+      '@tiptap/pm': 2.0.3_@tiptap+core@2.0.3
+      zeed-dom: 0.9.26
     dev: false
 
   /@tiptap/pm/2.0.3_@tiptap+core@2.0.3:
@@ -1761,6 +1801,11 @@ packages:
       shebang-command: 2.0.0
       which: 2.0.2
     dev: true
+
+  /css-what/6.1.0:
+    resolution: {integrity: sha512-HTUrgRJ7r4dsZKU6GjmpfRK1O76h97Z8MfS1G0FozR+oF2kG6Vfe8JE6zwrkbxigziPHinCJ+gCPjA9EaBDtRw==}
+    engines: {node: '>= 6'}
+    dev: false
 
   /cssesc/3.0.0:
     resolution: {integrity: sha512-/Tb/JcjK111nNScGob5MNtsntNM1aCNUDipB/TkwZFhyDrrE47SOx/18wF2bbjgc3ZzCSKW1T5nt5EbFoAz/Vg==}
@@ -3060,6 +3105,10 @@ packages:
     resolution: {integrity: sha512-C7bfi1UZmoj8+PQx22XyeXCuBlokoyWQL5pWSP+EI6nzRylyThouddufc2c1NDIcP9k5agmN9fLpA7VNJfIiqw==}
     dependencies:
       uc.micro: 1.0.6
+    dev: false
+
+  /linkifyjs/4.1.1:
+    resolution: {integrity: sha512-zFN/CTVmbcVef+WaDXT63dNzzkfRBKT1j464NJQkV7iSgJU0sLBus9W0HBwnXK13/hf168pbrx/V/bjEHOXNHA==}
     dev: false
 
   /loader-runner/4.3.0:
@@ -4930,6 +4979,13 @@ packages:
       string-width: 4.2.3
       y18n: 5.0.8
       yargs-parser: 20.2.9
+    dev: false
+
+  /zeed-dom/0.9.26:
+    resolution: {integrity: sha512-HWjX8rA3Y/RI32zby3KIN1D+mgskce+She4K7kRyyx62OiVxJ5FnYm8vWq0YVAja3Tf2S1M0XAc6O2lRFcMgcQ==}
+    engines: {node: '>=14.13.1'}
+    dependencies:
+      css-what: 6.1.0
     dev: false
 
   /zwitch/2.0.4:

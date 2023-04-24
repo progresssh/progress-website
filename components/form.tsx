@@ -25,14 +25,15 @@ const Form = () => {
     <div>
       {!isProgress && (
         <form
-          className=" font-quantico overflow-auto"
+          className="font-quantico overflow-auto"
           onSubmit={(e) => handleSubmit(e)}
         >
-          <div className="flex flex-col space-y-4 pt-2 md:flex-col md:w-2/6 justify-left">
+          <div>You&apos;re gonna carry that weight.</div>
+          <div className="flex flex-col space-y-4 pt-2 justify-left">
             <div className="flex flex-col">
               <label htmlFor="email">Email</label>
               <input
-                className="text-black"
+                className="text-black px-1"
                 type="email"
                 placeholder="email"
                 onChange={(e) => setEmail(e.target.value)}
@@ -41,7 +42,7 @@ const Form = () => {
             <div className="flex flex-col">
               <label htmlFor="password">Password</label>
               <input
-                className="text-black"
+                className="text-black px-1"
                 type="password"
                 placeholder="password"
                 onChange={(e) => setPassword(e.target.value)}

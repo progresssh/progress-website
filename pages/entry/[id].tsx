@@ -1,12 +1,26 @@
 import { format, fromUnixTime } from "date-fns";
 import { collection, doc, getDoc, getDocs } from "firebase/firestore";
-import Link from "next/link";
-import Layout from "../../components/layout";
 import { db } from "../../firebase";
 import { journalPost } from "../../types/journalPost";
+import StarterKit from "@tiptap/starter-kit";
+import { generateHTML } from "@tiptap/html";
+import Layout from "../../components/layout";
+import Link from "next/link";
+import TiptapLink from "@tiptap/extension-link";
+import Image from "@tiptap/extension-image";
 
 const Entry = (props: journalPost) => {
-  const content = props.content;
+  const content = generateHTML(props.body, [
+    StarterKit.configure({
+      gapcursor: false,
+      codeBlock: false,
+      dropcursor: false,
+      heading: { levels: [1, 2, 3, 4, 5, 6] },
+    }),
+    TiptapLink,
+    Image,
+  ]);
+
   const title = props.title;
   const time = fromUnixTime(props.time);
 
@@ -39,11 +53,8 @@ const Entry = (props: journalPost) => {
               {format(time, "dd LLLL yyyy")}
             </h2>
             <main>
-              <article className="prose prose-invert pt-8 pb-8 font-opensans leading-normal text-[0.87rem] md:text-[1.00rem]">
-                <div
-                  className=""
-                  dangerouslySetInnerHTML={{ __html: content }}
-                ></div>
+              <article className="prose prose-invert py-4 font-opensans leading-normal text-[0.87rem] md:text-[1.00rem]">
+                <div dangerouslySetInnerHTML={{ __html: content }}></div>
               </article>
             </main>
           </div>

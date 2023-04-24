@@ -7,11 +7,19 @@ const App = () => {
   return (
     <Layout title={"Gateway"}>
       <AuthProvider>
-        <div className="flex h-full flex-col justify-center items-center bg-[#090909] text-gray-300">
-          <div className="w-full mb-auto overflow-auto">
-            <Form />
-            <TextEditor />
-          </div>
+        <div className="flex h-full w-full flex-col justify-center items-center p-2 overflow-auto bg-[#090909] text-gray-300">
+          <video
+            src={require("../../public/star.mp4")}
+            muted
+            autoPlay
+            loop
+            playsInline
+            height={128}
+            width={128}
+          />
+          <Form />
+
+          <TextEditor />
         </div>
       </AuthProvider>
     </Layout>

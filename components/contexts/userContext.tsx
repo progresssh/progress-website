@@ -6,9 +6,16 @@ import {
   User,
 } from "firebase/auth";
 import { doc, setDoc } from "firebase/firestore";
-import { createContext, useContext, useEffect, useState } from "react";
+import {
+  createContext,
+  ErrorInfo,
+  useContext,
+  useEffect,
+  useState,
+} from "react";
 import app, { db } from "../../firebase";
 import { AuthInterface } from "../../types/auth";
+import { JSONContent } from "@tiptap/core";
 
 const AuthContext = createContext<AuthInterface | null>(null);
 const auth = getAuth(app);
@@ -19,31 +26,38 @@ const AuthProvider = ({ children }) => {
   const [currentUser, setCurrentUser] = useState<User | null>();
   const [isProgress, setIsProgress] = useState(false);
 
-  const postDocument = async (post) => {
-    const title = post[0].children[0].text;
-    const content = [];
-
-    const date = new Date();
-    const time = getUnixTime(date);
-
-    for (let index = 1; index < post.length; index++) {
-      content.push(post[index].children[0].text);
-    }
-
-    const replaceDataSpaces = title.replace(/\s/g, "-");
-    const processedData = replaceDataSpaces.replace(/[^a-zA-Z0-9-]/g, "");
-
-    const data = {
-      key: processedData,
-      title: title,
-      content: content,
-      time: time,
-    };
-
+  const postDocument = async (post: JSONContent) => {
     try {
+      if (
+        post.content[0].type !== "heading" &&
+        post.content[0].attrs.level !== 1
+      ) {
+        throw new Error();
+      }
+      const title = post.content.shift().content[0].text;
+      const body = post;
+
+      const date = new Date();
+      const time = getUnixTime(date);
+
+      for (let index = 1; index < post.length; index++) {
+        body.push(post[index].children[0].text);
+      }
+
+      const replaceDataSpaces = title.replace(/\s/g, "-");
+      const processedData = replaceDataSpaces.replace(/[^a-zA-Z0-9-]/g, "");
+
+      const data = {
+        key: processedData,
+        title: title,
+        body: body,
+        time: time,
+      };
+
+      console.log(data);
       await setDoc(doc(db, "journal", data.key), data);
     } catch (e) {
-      console.error("Error adding document:", e);
+      console.error("Error adding document: ", e.message);
     }
   };
 
