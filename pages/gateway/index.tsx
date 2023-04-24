@@ -1,22 +1,25 @@
 import AuthProvider from "../../components/contexts/userContext";
-import Display from "../../components/display";
 import Form from "../../components/form";
 import Layout from "../../components/layout";
-import TextEditor from "../../components/textEditor";
+import TextEditor from "../../components/TextEditor";
 
 const App = () => {
   return (
     <Layout title={"Gateway"}>
       <AuthProvider>
-        <div className="flex w-full h-full flex-col justify-center items-center bg-[#090909] text-gray-300">
-          <div className="md:w-5/12 w-full p-8 mb-auto overflow-auto">
-            <Form />
+        <div className="flex h-full w-full flex-col justify-center items-center p-2 overflow-auto bg-[#090909] text-gray-300">
+          <video
+            src={require("../../public/star.mp4")}
+            muted
+            autoPlay
+            loop
+            playsInline
+            height={128}
+            width={128}
+          />
+          <Form />
 
-            <div className="pt-4 pb-4">
-              <Display />
-            </div>
-            <TextEditor />
-          </div>
+          <TextEditor />
         </div>
       </AuthProvider>
     </Layout>

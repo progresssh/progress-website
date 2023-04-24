@@ -1,5 +1,5 @@
 export interface journalPost {
-  content: string[];
+  body: JSONContent;
   key: string;
   time: number;
   title: string;
