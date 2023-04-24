@@ -1,4 +1,4 @@
-import AuthProvider from "../../components/contexts/userContext";
+import AuthProvider, { useAuth } from "../../components/contexts/userContext";
 import Form from "../../components/form";
 import Layout from "../../components/layout";
 import TextEditor from "../../components/TextEditor";
