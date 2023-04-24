@@ -27,7 +27,7 @@ const Entry = (props: journalPost) => {
   return (
     <Layout title={title}>
       <div className="h-full w-full  md:flex md:justify-center overflow-auto bg-[#090909]">
-        <div className="md:w-5/12 p-8">
+        <div className="p-8">
           <div className=" text-gray-300">
             <Link href={"/"} aria-label="Back to homepage">
               <svg
@@ -53,7 +53,7 @@ const Entry = (props: journalPost) => {
               {format(time, "dd LLLL yyyy")}
             </h2>
             <main>
-              <article className="prose prose-invert py-4 font-opensans leading-normal text-[0.87rem] md:text-[1.00rem]">
+              <article className="prose prose-invert py-4 font-opensans leading-normal text-[0.9rem] md:text-[1.00rem]">
                 <div dangerouslySetInnerHTML={{ __html: content }}></div>
               </article>
             </main>
