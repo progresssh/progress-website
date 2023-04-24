@@ -54,7 +54,6 @@ const AuthProvider = ({ children }) => {
         time: time,
       };
 
-      console.log(data);
       await setDoc(doc(db, "journal", data.key), data);
     } catch (e) {
       console.error("Error adding document: ", e.message);
