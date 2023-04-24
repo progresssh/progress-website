@@ -79,7 +79,7 @@ const FixedMenu = ({ editor }: { editor: Editor }) => {
 };
 
 const TextEditor = () => {
-  const { postDocument } = useAuth();
+  const { postDocument, isProgress } = useAuth();
 
   const handleSubmit = (e: MouseEvent) => {
     e.preventDefault;
@@ -106,16 +106,20 @@ const TextEditor = () => {
   });
 
   return (
-    <div className="h-full w-full flex flex-col items-center">
-      <FixedMenu editor={editor} />
-      <EditorContent editor={editor} className="my-2 w-full" />
-      <button
-        onClick={(e) => handleSubmit(e)}
-        className="border p-2 font-quantico text-center w-full md:w-1/6"
-      >
-        Submit
-      </button>
-    </div>
+    <>
+      {isProgress && (
+        <div className="h-full w-full flex flex-col items-center">
+          <FixedMenu editor={editor} />
+          <EditorContent editor={editor} className="my-2 w-full" />
+          <button
+            onClick={(e) => handleSubmit(e)}
+            className="border p-2 font-quantico text-center w-full md:w-1/6"
+          >
+            Submit
+          </button>
+        </div>
+      )}
+    </>
   );
 };
 
