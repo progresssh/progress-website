@@ -5,6 +5,7 @@ const Layout = ({ children, title }) => {
     <>
       <Head>
         <title>{title}</title>
+        <meta property="og:title" content={title} />
       </Head>
       {children}
     </>
