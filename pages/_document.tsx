@@ -34,7 +34,7 @@ class MyDocument extends Document {
           <meta property="og:url" content="https://www.progress.sh/" />
           <meta
             property="og:description"
-            content="A journey to strive for beyond."
+            content="Progress.sh · A journey to strive for life. Progress is my attempt at getting better at the things that are meaningful to me and to strive for life. A struggle to exist."
           />
           <meta property="og:type" content="website" />
           <meta
@@ -48,11 +48,20 @@ class MyDocument extends Document {
           <meta name="twitter:title" content="Progress" />
           <meta
             name="twitter:description"
-            content="A journey to strive for beyond."
+            content="Progress.sh · A journey to strive for life. Progress is my attempt at getting better at the things that are meaningful to me and to strive for life. A struggle to exist."
           />
           <meta
             name="twitter:image"
             content="https://github.com/progresssh/progress-website/blob/main/public/images/arch.png"
+          />
+          <meta
+            name="viewport"
+            content="width=device-width, initial-scale=1.0"
+          />
+
+          <meta
+            name="description"
+            content="Progress.sh · A journey to strive for life. Progress is my attempt at getting better at the things that are meaningful to me and to strive for life. A struggle to exist."
           />
         </Head>
         <body className="h-full w-full">

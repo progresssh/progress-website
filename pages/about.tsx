@@ -9,17 +9,12 @@ export default function About() {
         <div className="p-8 bg-[rgb(9,9,9)]">
           <div className="flex w-full h-full">
             <div className=" md:w-4/12 flex flex-col">
-              <Link
-                href={"/"}
-                className="w-full"
-                aria-label="Back to homepage"
-                legacyBehavior
-              >
+              <Link href={"/"} className="w-full" aria-label="Back to homepage">
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
                   fill="none"
-                  viewBox="0 0 24 24"
-                  strokeWidth={1.5}
+                  viewBox="0 0 24 4"
+                  strokeWidth={1.0}
                   stroke="currentColor"
                   className="w-6 h-6 text-gray-300"
                 >

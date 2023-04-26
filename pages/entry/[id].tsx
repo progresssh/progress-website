@@ -26,17 +26,17 @@ const Entry = (props: journalPost) => {
 
   return (
     <Layout title={title}>
-      <div className="h-full w-full  md:flex md:justify-center overflow-auto bg-[#090909]">
+      <div className="h-full w-full md:flex md:justify-center overflow-auto bg-[#090909]">
         <div className="p-8">
-          <div className=" text-gray-300">
+          <div className="text-gray-300">
             <Link href={"/"} aria-label="Back to homepage">
               <svg
                 xmlns="http://www.w3.org/2000/svg"
                 fill="none"
-                viewBox="0 0 24 24"
-                strokeWidth={1.5}
+                viewBox="0 0 24 4"
+                strokeWidth={1.0}
                 stroke="currentColor"
-                className="w-6 h-6"
+                className="w-6 h-6 text-gray-300"
               >
                 <path
                   strokeLinecap="round"
@@ -45,7 +45,6 @@ const Entry = (props: journalPost) => {
                 />
               </svg>
             </Link>
-
             <h1 className="text-[#FFD600] text-2xl font-bold font-quantico pt-4">
               {title}
             </h1>
