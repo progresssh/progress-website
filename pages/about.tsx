@@ -74,6 +74,14 @@ export default function About() {
                       >
                         Twitch
                       </Link>
+                      <Link
+                        href="https://www.instagram.com/"
+                        target="_blank"
+                        aria-label="Instagram"
+                        className="border-2 rounded-md p-2 border-[#FFD600]"
+                      >
+                        Instagram
+                      </Link>
                     </div>
                   </div>
                 </div>
