@@ -7,7 +7,7 @@ import { journalPost } from "../types/journalPost";
 function Items({ currentItems }) {
   return (
     <>
-      <ul className="space-y-3 h-3/6">
+      <ul className="space-y-3 text-right h-1/3">
         {currentItems?.map((post: journalPost) => (
           <li key={post.key}>
             <Link href={"entry/" + post.key}>{post.title}</Link>
@@ -49,8 +49,9 @@ function PaginatedItems({ itemsPerPage, data }) {
         pageCount={pageCount}
         previousLabel="<"
         renderOnZeroPageCount={null}
-        className="flex justify-between items-center h-10 "
-        pageLinkClassName=""
+        className="flex justify-between items-center h-10"
+        pageClassName="w-full text-center"
+        pageLinkClassName="w-full inline-block"
         activeClassName="text-[#FFD600]"
       />
       <Items currentItems={currentItems} />

@@ -10,10 +10,10 @@ export default function Homepage({ data }: { data: journalPost }) {
   const title = "Progress";
   return (
     <Layout title={title}>
-      <div className="flex h-full flex-col p-2 md:p-0 justify-center bg-[#090909]">
+      <div className="flex h-full flex-col p-2 md:p-0 justify-center bg-[#090909] origin-[50vw_50vh]">
         <div className="flex flex-col h-full md:flex-row md:justify-evenly justify-between items-center">
           <div className="w-11/12 text-white flex flex-col text-sm md:w-32 h-1/4 md:m-0 self-center break-words justify-center  font-quantico ">
-            <h2 className="text-[#FFD600] text-xs">journal</h2>
+            <h2 className="text-[#FFD600] text-xs text-right">journal</h2>
             <PaginatedList data={data} items={3} />
           </div>
 
@@ -30,19 +30,19 @@ export default function Homepage({ data }: { data: journalPost }) {
                 width={480}
               />
             </Link>
-            <div className="md:absolute  bottom-5 self-center text-center">
-              <h1 className="font-rajdhani font-light text-2xl text-white">
+            <div className="md:absolute mt-4 bottom-5 self-center text-center">
+              <h1 className="font-rajdhani font-light text-3xl text-white">
                 PROGRESS
               </h1>
-              <h2 className="text-[#FFD600] font-rajdhani font-light text-xs md:text-sm  ">
+              <h2 className="text-[#FFD600] font-rajdhani font-light text-base md:text-lg">
                 Let&apos;s all do our best.
               </h2>
             </div>
           </div>
 
           <div className="flex flex-col pl-4 pb-4 md:pb-0 md:h-auto text-sm md:m-0 md:w-40 self-start md:self-center font-quantico">
-            <h3 className="text-[#FFD600] text-xs">information</h3>
-            <div className="text-white flex flex-col flex-grow md:flex-col space-y-2 md:space-y-2 ">
+            <h3 className="text-[#FFD600] text-xs mb-2">information</h3>
+            <div className="text-white flex flex-col flex-grow md:flex-col space-y-2 md:space-y-2">
               <div className="space-x-8 md:flex md:flex-col md:space-x-0 md:space-y-2">
                 <Link href="/about" aria-label="About Page">
                   About
