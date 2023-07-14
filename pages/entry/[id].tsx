@@ -56,12 +56,12 @@ const Entry = (props: journalPost) => {
                 <div dangerouslySetInnerHTML={{ __html: content }}></div>
               </article>
             </main>
-            <footer className=" font-quantico pb-4">
+            <footer className=" font-quantico pb-8">
               <Link
                 href={"https://progresssh.substack.com/"}
                 target="_blank"
                 aria-label="Subscribe to Newsletter"
-                className="text-[#FFD600] text-base font-bold"
+                className="text-[#FFD600] text-base hover:font-bold"
               >
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
