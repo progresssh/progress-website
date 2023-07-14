@@ -13,7 +13,9 @@ export default function Homepage({ data }: { data: journalPost }) {
       <div className="flex h-full flex-col p-2 md:p-0 justify-center bg-[#090909] origin-[50vw_50vh]">
         <div className="flex flex-col h-full md:flex-row md:justify-evenly justify-between items-center">
           <div className="w-11/12 text-white flex flex-col text-sm md:w-32 h-1/4 md:m-0 self-center break-words justify-center  font-quantico ">
-            <h2 className="text-[#FFD600] text-xs text-left md:text-right">journal</h2>
+            <h2 className="text-[#FFD600] text-xs text-left md:text-right">
+              journal
+            </h2>
             <PaginatedList data={data} items={3} />
           </div>
 
