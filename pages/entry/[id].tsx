@@ -52,10 +52,34 @@ const Entry = (props: journalPost) => {
               {format(time, "dd LLLL yyyy")}
             </h2>
             <main>
-              <article className="prose prose-invert py-4 font-opensans leading-normal text-[0.9rem] md:text-[1.00rem]">
+              <article className="prose prose-invert pt-4 font-opensans leading-normal text-[0.94rem] md:text-[1.05rem]">
                 <div dangerouslySetInnerHTML={{ __html: content }}></div>
               </article>
             </main>
+            <footer className=" font-quantico pb-4">
+              <Link
+                href={"https://progresssh.substack.com/"}
+                target="_blank"
+                aria-label="Subscribe to Newsletter"
+                className="text-[#FFD600] text-base font-bold"
+              >
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  fill="none"
+                  viewBox="0 0 24 24"
+                  stroke-width="1.5"
+                  stroke="currentColor"
+                  className="w-6 h-6 mr-1 inline-block"
+                >
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    d="M17.25 8.25L21 12m0 0l-3.75 3.75M21 12H3"
+                  />
+                </svg>
+                Subscribe to Progress
+              </Link>
+            </footer>
           </div>
         </div>
       </div>
