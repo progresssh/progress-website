@@ -7,7 +7,7 @@ import { journalPost } from "../types/journalPost";
 function Items({ currentItems }) {
   return (
     <>
-      <ul className="space-y-3 text-left md:text-right md:h-5/6">
+      <ul className="space-y-3 text-left md:text-right md:h-3/6">
         {currentItems?.map((post: journalPost) => (
           <li key={post.key}>
             <Link href={"entry/" + post.key}>{post.title}</Link>
