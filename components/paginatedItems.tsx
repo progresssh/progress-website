@@ -47,6 +47,8 @@ function PaginatedItems({ itemsPerPage, data }) {
         nextLabel=">"
         onPageChange={handlePageClick}
         pageCount={pageCount}
+        pageRangeDisplayed={2}
+        marginPagesDisplayed={2}
         previousLabel="<"
         renderOnZeroPageCount={null}
         className="flex justify-between items-center h-10"
