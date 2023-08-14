@@ -76,8 +76,8 @@ export default function WriteModal() {
         <div className="ml-4 font-quantico text-sm italic text-red-700">
           <p>
             Your message has failed to reach us, you may try again. Please
-            contact <a href="mailto:in.progress00@gmail.com">Progress</a> if the
-            issue persists.
+            contact <a href="mailto:star@progress.sh">star@progress.sh</a> if
+            the issue persists.
           </p>
         </div>
       ) : (
@@ -86,7 +86,7 @@ export default function WriteModal() {
       <Dialog
         initialFocus={inputRef}
         open={isOpen}
-        onClose={() => {}}
+        onClose={() => setIsOpen(false)}
         className="relative z-50"
       >
         <div className="fixed inset-0 bg-black/90 ">

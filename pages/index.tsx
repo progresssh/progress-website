@@ -36,9 +36,11 @@ export default function Homepage({ data }: { data: journalPost }) {
               <h1 className="font-rajdhani font-light text-3xl text-white">
                 PROGRESS
               </h1>
-              <h2 className="text-[#FFD600] font-rajdhani font-light text-base md:text-lg">
-                Let&apos;s all do our best.
-              </h2>
+              <Link href="/transmissions" aria-label="To Transmission">
+                <h2 className="text-[#FFD600] font-rajdhani font-light text-base md:text-lg">
+                  Let&apos;s all do our best
+                </h2>
+              </Link>
             </div>
           </div>
 

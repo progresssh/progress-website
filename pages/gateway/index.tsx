@@ -18,7 +18,6 @@ const App = () => {
             width={128}
           />
           <Form />
-
           <TextEditor />
         </div>
       </AuthProvider>
