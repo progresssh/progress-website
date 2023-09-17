@@ -4,13 +4,17 @@ import Link from "next/link";
 import { compareDesc } from "date-fns";
 import { journalPost } from "../types/journalPost";
 
-function Items({ currentItems }) {
+function Items({ currentItems, isTransmission }) {
   return (
     <>
-      <ul className="space-y-3 text-left md:text-right md:h-3/6">
+      <ul className="space-y-3 text-left md:text-right h-3/6">
         {currentItems?.map((post: journalPost) => (
           <li key={post.key}>
-            <Link href={"entry/" + post.key}>{post.title}</Link>
+            <Link
+              href={`${isTransmission ? "transmission/" : "entry/"}${post.key}`}
+            >
+              {post.title}
+            </Link>
           </li>
         ))}
       </ul>
@@ -18,7 +22,7 @@ function Items({ currentItems }) {
   );
 }
 
-function PaginatedItems({ itemsPerPage, data }) {
+function PaginatedItems({ itemsPerPage, data, isTransmission }) {
   // We start with an empty list of items.
   const [currentItems, setCurrentItems] = useState(null);
   const [pageCount, setPageCount] = useState(0);
@@ -56,11 +60,17 @@ function PaginatedItems({ itemsPerPage, data }) {
         pageLinkClassName="w-full inline-block"
         activeClassName="text-[#FFD600]"
       />
-      <Items currentItems={currentItems} />
+      <Items currentItems={currentItems} isTransmission={isTransmission} />
     </>
   );
 }
 
-export default function PaginatedList({ data, items }) {
-  return <PaginatedItems itemsPerPage={items} data={data} />;
+export default function PaginatedList({ data, items, isTransmission }) {
+  return (
+    <PaginatedItems
+      itemsPerPage={items}
+      data={data}
+      isTransmission={isTransmission}
+    />
+  );
 }
