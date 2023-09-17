@@ -26,9 +26,16 @@ function PaginatedItems({ itemsPerPage, data, isTransmission }) {
   // We start with an empty list of items.
   const [currentItems, setCurrentItems] = useState(null);
   const [pageCount, setPageCount] = useState(0);
+  const [currentPage, setCurrentPage] = useState(0);
+  const [itemOffset, setItemOffset] = useState(0);
+
+  useEffect(() => {
+    setItemOffset(0);
+    setCurrentPage(0);
+  }, [isTransmission]);
+
   // Here we use item offsets; we could also use page offsets
   // following the API or data you're working with.
-  const [itemOffset, setItemOffset] = useState(0);
 
   useEffect(() => {
     // Fetch items from another resources.
@@ -41,7 +48,10 @@ function PaginatedItems({ itemsPerPage, data, isTransmission }) {
   // Invoke when user click to request another page.
   const handlePageClick = (event) => {
     const newOffset = (event.selected * itemsPerPage) % data.length;
+
     setItemOffset(newOffset);
+
+    setCurrentPage(event.selected);
   };
 
   return (
@@ -51,6 +61,7 @@ function PaginatedItems({ itemsPerPage, data, isTransmission }) {
         nextLabel=">"
         onPageChange={handlePageClick}
         pageCount={pageCount}
+        forcePage={currentPage}
         pageRangeDisplayed={2}
         marginPagesDisplayed={2}
         previousLabel="<"
@@ -58,7 +69,7 @@ function PaginatedItems({ itemsPerPage, data, isTransmission }) {
         className="flex justify-between items-center h-10"
         pageClassName="w-full text-center"
         pageLinkClassName="w-full inline-block"
-        activeClassName="text-[#FFD600]"
+        activeClassName={isTransmission ? "text-[#FFD600]" : "text-[#00FFFF]"}
       />
       <Items currentItems={currentItems} isTransmission={isTransmission} />
     </>

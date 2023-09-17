@@ -13,6 +13,7 @@ export default function Homepage(props) {
   console.log(props);
 
   const [isTransmission, setIsTransmission] = useState(true);
+
   return (
     <Layout title={title}>
       <div className="flex h-full flex-col p-2 md:p-0 justify-center bg-[#090909] origin-[50vw_50vh]">
@@ -20,7 +21,7 @@ export default function Homepage(props) {
           <div className="w-11/12 text-white flex flex-col text-sm md:w-36 h-1/4 md:m-0 self-center break-words justify-center  font-quantico ">
             <div className=" text-xs text-left md:text-right flex w-full justify-evenly ">
               <button
-                className={`w-full ${
+                className={`w-full p-1 ${
                   isTransmission ? "text-[#FFD600]" : "text-[#808080]"
                 }`}
                 onClick={() => setIsTransmission(true)}
@@ -30,14 +31,13 @@ export default function Homepage(props) {
               <span className="px-4">|</span>
               <button
                 className={`w-full ${
-                  !isTransmission ? "text-[#FFD600]" : "text-[#808080]"
+                  !isTransmission ? "text-[#00FFFF]" : "text-[#808080]"
                 }`}
                 onClick={() => setIsTransmission(false)}
               >
                 journal
               </button>
             </div>
-
             <PaginatedList
               data={isTransmission ? props.transmissions : props.journal}
               items={3}

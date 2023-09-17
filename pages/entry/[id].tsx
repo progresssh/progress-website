@@ -45,7 +45,7 @@ const Entry = (props: journalPost) => {
                 />
               </svg>
             </Link>
-            <h1 className="text-[#FFD600] text-2xl font-bold font-quantico pt-4">
+            <h1 className="text-[#00FFFF] text-2xl font-bold font-quantico pt-4">
               {title}
             </h1>
             <h2 className="font-quantico text-xs md:text-sm">
@@ -61,7 +61,7 @@ const Entry = (props: journalPost) => {
                 href={"https://progresssh.substack.com/"}
                 target="_blank"
                 aria-label="Subscribe to Newsletter"
-                className="text-[#FFD600] text-base hover:font-bold"
+                className="text-[#00FFFF] text-base hover:font-bold"
               >
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
