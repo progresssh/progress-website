@@ -5,18 +5,44 @@ import Layout from "../components/layout";
 import PaginatedList from "../components/paginatedItems";
 import { GetStaticProps } from "next";
 import { journalPost } from "../types/journalPost";
+import { useState } from "react";
 
-export default function Homepage({ data }: { data: journalPost }) {
+export default function Homepage(props) {
+  // : { data: journalPost }
   const title = "Progress";
+  console.log(props);
+
+  const [isTransmission, setIsTransmission] = useState(true);
+
   return (
     <Layout title={title}>
       <div className="flex h-full flex-col p-2 md:p-0 justify-center bg-[#090909] origin-[50vw_50vh]">
         <div className="flex flex-col h-full md:flex-row md:justify-evenly justify-between items-center">
-          <div className="w-11/12 text-white flex flex-col text-sm md:w-32 h-1/4 md:m-0 self-center break-words justify-center  font-quantico ">
-            <h2 className="text-[#FFD600] text-xs text-left md:text-right">
-              journal
-            </h2>
-            <PaginatedList data={data} items={3} />
+          <div className="w-11/12 text-white flex flex-col text-sm md:w-36 h-1/4 md:m-0 self-center break-words justify-center  font-quantico ">
+            <div className=" text-xs text-left md:text-right flex w-full justify-evenly ">
+              <button
+                className={`w-full p-1 ${
+                  isTransmission ? "text-[#FFD600]" : "text-[#808080]"
+                }`}
+                onClick={() => setIsTransmission(true)}
+              >
+                transmissions
+              </button>
+              <span className="px-4">|</span>
+              <button
+                className={`w-full ${
+                  !isTransmission ? "text-[#00FFFF]" : "text-[#808080]"
+                }`}
+                onClick={() => setIsTransmission(false)}
+              >
+                journal
+              </button>
+            </div>
+            <PaginatedList
+              data={isTransmission ? props.transmissions : props.journal}
+              items={3}
+              isTransmission={isTransmission}
+            />
           </div>
 
           <div className=" flex h-full md:self-center md:pl-0 md:items-center flex-col justify-center">
@@ -37,7 +63,7 @@ export default function Homepage({ data }: { data: journalPost }) {
                 PROGRESS
               </h1>
               <h2 className="text-[#FFD600] font-rajdhani font-light text-base md:text-lg">
-                Let&apos;s all do our best.
+                Let&apos;s all do our best
               </h2>
             </div>
           </div>
@@ -73,15 +99,25 @@ export default function Homepage({ data }: { data: journalPost }) {
 }
 
 export const getStaticProps: GetStaticProps = async () => {
-  const data: journalPost[] = [];
+  const data = [[], []];
+  // journalPost[]
+  const transmissionQuerySnapshot = await getDocs(
+    collection(db, "transmissions")
+  );
+  transmissionQuerySnapshot.forEach((doc) => {
+    const newData = { key: doc.id, ...doc.data() };
+    // as journalPost
+    data[0].push(newData);
+  });
 
-  const querySnapshot = await getDocs(collection(db, "journal"));
-  querySnapshot.forEach((doc) => {
-    const newData = { key: doc.id, ...doc.data() } as journalPost;
-    data.push(newData);
+  const journalQuerySnapshot = await getDocs(collection(db, "journal"));
+  journalQuerySnapshot.forEach((doc) => {
+    const newData = { key: doc.id, ...doc.data() };
+    // as journalPost
+    data[1].push(newData);
   });
 
   return {
-    props: { data },
+    props: { transmissions: data[0], journal: data[1] },
   };
 };

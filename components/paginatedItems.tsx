@@ -4,13 +4,17 @@ import Link from "next/link";
 import { compareDesc } from "date-fns";
 import { journalPost } from "../types/journalPost";
 
-function Items({ currentItems }) {
+function Items({ currentItems, isTransmission }) {
   return (
     <>
-      <ul className="space-y-3 text-left md:text-right md:h-3/6">
+      <ul className="space-y-3 text-left md:text-right h-3/6">
         {currentItems?.map((post: journalPost) => (
           <li key={post.key}>
-            <Link href={"entry/" + post.key}>{post.title}</Link>
+            <Link
+              href={`${isTransmission ? "transmission/" : "entry/"}${post.key}`}
+            >
+              {post.title}
+            </Link>
           </li>
         ))}
       </ul>
@@ -18,13 +22,20 @@ function Items({ currentItems }) {
   );
 }
 
-function PaginatedItems({ itemsPerPage, data }) {
+function PaginatedItems({ itemsPerPage, data, isTransmission }) {
   // We start with an empty list of items.
   const [currentItems, setCurrentItems] = useState(null);
   const [pageCount, setPageCount] = useState(0);
+  const [currentPage, setCurrentPage] = useState(0);
+  const [itemOffset, setItemOffset] = useState(0);
+
+  useEffect(() => {
+    setItemOffset(0);
+    setCurrentPage(0);
+  }, [isTransmission]);
+
   // Here we use item offsets; we could also use page offsets
   // following the API or data you're working with.
-  const [itemOffset, setItemOffset] = useState(0);
 
   useEffect(() => {
     // Fetch items from another resources.
@@ -37,7 +48,10 @@ function PaginatedItems({ itemsPerPage, data }) {
   // Invoke when user click to request another page.
   const handlePageClick = (event) => {
     const newOffset = (event.selected * itemsPerPage) % data.length;
+
     setItemOffset(newOffset);
+
+    setCurrentPage(event.selected);
   };
 
   return (
@@ -47,6 +61,7 @@ function PaginatedItems({ itemsPerPage, data }) {
         nextLabel=">"
         onPageChange={handlePageClick}
         pageCount={pageCount}
+        forcePage={currentPage}
         pageRangeDisplayed={2}
         marginPagesDisplayed={2}
         previousLabel="<"
@@ -54,13 +69,19 @@ function PaginatedItems({ itemsPerPage, data }) {
         className="flex justify-between items-center h-10"
         pageClassName="w-full text-center"
         pageLinkClassName="w-full inline-block"
-        activeClassName="text-[#FFD600]"
+        activeClassName={isTransmission ? "text-[#FFD600]" : "text-[#00FFFF]"}
       />
-      <Items currentItems={currentItems} />
+      <Items currentItems={currentItems} isTransmission={isTransmission} />
     </>
   );
 }
 
-export default function PaginatedList({ data, items }) {
-  return <PaginatedItems itemsPerPage={items} data={data} />;
+export default function PaginatedList({ data, items, isTransmission }) {
+  return (
+    <PaginatedItems
+      itemsPerPage={items}
+      data={data}
+      isTransmission={isTransmission}
+    />
+  );
 }

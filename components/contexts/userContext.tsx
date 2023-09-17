@@ -26,14 +26,19 @@ const AuthProvider = ({ children }) => {
   const [currentUser, setCurrentUser] = useState<User | null>();
   const [isProgress, setIsProgress] = useState(false);
 
-  const postDocument = async (post: JSONContent) => {
+  const postDocument = async (
+    post: JSONContent,
+    type: "transmissions" | "journal"
+  ) => {
     try {
       if (
         post.content[0].type !== "heading" &&
-        post.content[0].attrs.level !== 1
+        post.content[0].attrs.level !== 1 &&
+        type === "journal"
       ) {
         throw new Error();
       }
+
       const title = post.content.shift().content[0].text;
       const body = post;
 
@@ -54,7 +59,13 @@ const AuthProvider = ({ children }) => {
         time: time,
       };
 
-      await setDoc(doc(db, "journal", data.key), data);
+      await setDoc(doc(db, type, data.key), data);
+
+      console.log(
+        type === "transmissions"
+          ? "Transmission received."
+          : "A new page for the journal."
+      );
     } catch (e) {
       console.error("Error adding document: ", e.message);
     }

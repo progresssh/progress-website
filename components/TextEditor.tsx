@@ -1,12 +1,33 @@
 import Image from "@tiptap/extension-image";
 import { useEditor, EditorContent, isActive } from "@tiptap/react";
 import StarterKit from "@tiptap/starter-kit";
-import { MouseEvent, useCallback } from "react";
+import {
+  ChangeEvent,
+  Dispatch,
+  MouseEvent,
+  SetStateAction,
+  useCallback,
+  useState,
+} from "react";
 import { Editor } from "@tiptap/react";
 import { useAuth } from "./contexts/userContext";
 import { Link } from "@tiptap/extension-link";
 
-const FixedMenu = ({ editor }: { editor: Editor }) => {
+const FixedMenu = ({
+  editor,
+  setPostMode,
+}: {
+  editor: Editor;
+  setPostMode: Dispatch<SetStateAction<"journal" | "transmissions">>;
+}) => {
+  const handleModeChange = (e: ChangeEvent<HTMLSelectElement>) => {
+    const mode = e.target.value;
+    if (mode === "transmissions" || mode === "journal") {
+      setPostMode(mode);
+    } else {
+      console.error("incorrect mode: must be transmissions or journal");
+    }
+  };
   const handleBoldButton = () => {
     editor.chain().focus().toggleBold().run();
   };
@@ -73,6 +94,10 @@ const FixedMenu = ({ editor }: { editor: Editor }) => {
         >
           Bulletlist
         </button>
+        <select name="mode" onChange={handleModeChange}>
+          <option value="journal">journal</option>
+          <option value="transmissions">transmissions</option>
+        </select>
       </div>
     </div>
   );
@@ -80,10 +105,13 @@ const FixedMenu = ({ editor }: { editor: Editor }) => {
 
 const TextEditor = () => {
   const { postDocument, isProgress } = useAuth();
+  const [postMode, setPostMode] = useState<"journal" | "transmissions">(
+    "journal"
+  );
 
   const handleSubmit = (e: MouseEvent) => {
     e.preventDefault;
-    postDocument(editor.getJSON());
+    postDocument(editor.getJSON(), postMode);
   };
 
   const editor = useEditor({
@@ -109,7 +137,7 @@ const TextEditor = () => {
     <>
       {isProgress && (
         <div className="h-full w-full flex flex-col items-center">
-          <FixedMenu editor={editor} />
+          <FixedMenu editor={editor} setPostMode={setPostMode} />
           <EditorContent editor={editor} className="my-2 w-full" />
           <button
             onClick={(e) => handleSubmit(e)}

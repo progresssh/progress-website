@@ -24,9 +24,9 @@ function RedirectToHome({ data }: { data: journalPost[] }) {
           />
         </Link>
         <div className=" text-white flex flex-col text-sm items-center mt-8 h-1/4 break-words w-1/2 font-quantico">
-          <h2 className="text-[#00FFFF] text-base">journal</h2>
+          <h2 className="text-[#FFD600] text-base">transmissions</h2>
           <div className="space-y-4">
-            <PaginatedList data={data} items={12} isTransmission={false} />
+            <PaginatedList data={data} items={12} isTransmission={true} />
           </div>
         </div>
       </div>
@@ -37,7 +37,7 @@ function RedirectToHome({ data }: { data: journalPost[] }) {
 export const getStaticProps: GetStaticProps = async () => {
   const data: journalPost[] = [];
 
-  const querySnapshot = await getDocs(collection(db, "journal"));
+  const querySnapshot = await getDocs(collection(db, "transmissions"));
   querySnapshot.forEach((doc) => {
     const newData = { key: doc.id, ...doc.data() } as journalPost;
     data.push(newData);
