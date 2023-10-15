@@ -49,7 +49,7 @@ const PROJECT_LINKS = [
   },
   {
     name: "Second Sight",
-    href: "https://www.secondsight.com",
+    href: "https://www.secondsight.app",
     description:
       "Journaling website with an AI that is a tad over-enthusiastic",
   },
