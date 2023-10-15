@@ -75,12 +75,8 @@ export default function Homepage(props) {
                 <Link href="/about" aria-label="About Page">
                   About
                 </Link>
-                <Link
-                  href="https://secondsight.app"
-                  aria-label="Second Sight"
-                  target="_blank"
-                >
-                  Second Sight
+                <Link href="/links" aria-label="Links Page">
+                  Links
                 </Link>
                 <Link
                   href="mailto:star@progress.sh"
