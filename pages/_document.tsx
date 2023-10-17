@@ -33,6 +33,10 @@ class MyDocument extends Document {
           <meta property="og:site_name" content="progress.sh" />
           <meta property="og:url" content="https://www.progress.sh/" />
           <meta
+            property="og:image"
+            content="https://github.com/progresssh/progress-website/blob/main/public/images/banner.jpg"
+          />
+          <meta
             property="og:description"
             content="Progress.sh · Let's all do our best"
           />
