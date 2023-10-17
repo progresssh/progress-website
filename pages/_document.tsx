@@ -34,13 +34,10 @@ class MyDocument extends Document {
           <meta property="og:url" content="https://www.progress.sh/" />
           <meta
             property="og:description"
-            content="Progress.sh · Let's all do our best."
+            content="Progress.sh · Let's all do our best"
           />
           <meta property="og:type" content="website" />
-          <meta
-            property="og:image"
-            content="https://pbs.twimg.com/profile_banners/1371479862314156033/1680683023/1500x500"
-          ></meta>
+          <meta property="https://github.com/progresssh/progress-website/blob/main/public/images/banner.jpg"></meta>
 
           <meta name="twitter:card" content="summary_large_image" />
           <meta property="twitter:domain" content="progress.sh" />
@@ -48,16 +45,16 @@ class MyDocument extends Document {
           <meta name="twitter:title" content="Progress" />
           <meta
             name="twitter:description"
-            content="Progress.sh · Let's all do our best."
+            content="Progress.sh · Let's all do our best"
           />
           <meta
             name="twitter:image"
-            content="https://github.com/progresssh/progress-website/blob/main/public/images/arch.png"
+            content="https://github.com/progresssh/progress-website/blob/main/public/images/banner.jpg"
           />
 
           <meta
             name="description"
-            content="Progress.sh · Let's all do our best."
+            content="Progress.sh · Let's all do our best"
           />
         </Head>
         <body className="h-full w-full">
