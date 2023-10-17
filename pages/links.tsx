@@ -87,12 +87,12 @@ export default function LinkPage() {
               <div className="flex flex-col  ">
                 <div className="md:w-full md:pr-4">
                   <div>
-                    <h1 className="text-[#FFD600] text-2xl italic font-thin font-quantico py-4">
+                    <h1 className="text-[#FFD600] text-2xl  font-thin font-quantico py-4">
                       Links
                     </h1>
                     <div className="md:flex md:flex-col text-gray-300 font-opensans space-y-6 leading-normal text-[0.87rem] ">
                       <div>
-                        <h3 className="text-[#FFD600] text-lg font-normal italic font-quantico pb-3">
+                        <h3 className="text-[#FFD600] text-lg font-normal  font-quantico pb-3">
                           Socials
                         </h3>
                         <nav>
@@ -102,7 +102,7 @@ export default function LinkPage() {
                                 <li key={i}>
                                   <Link
                                     href={link.href}
-                                    className="text-[#FFD600] hover:underline font-bold"
+                                    className="text-[#FFD600] hover:underline font-bold italic"
                                     aria-label={`${link.name} link`}
                                     target="_blank"
                                   >
@@ -118,7 +118,7 @@ export default function LinkPage() {
                         </nav>
                       </div>
                       <div>
-                        <h3 className="text-[#FFD600] text-lg font-normal italic font-quantico py-3">
+                        <h3 className="text-[#FFD600] text-lg font-normal  font-quantico py-3">
                           Projects
                         </h3>
                         <nav>
@@ -128,7 +128,7 @@ export default function LinkPage() {
                                 <li key={i}>
                                   <Link
                                     href={link.href}
-                                    className="text-[#FFD600] hover:underline font-bold"
+                                    className="text-[#FFD600] hover:underline font-bold italic"
                                     aria-label={`${link.name} link`}
                                     target="_blank"
                                   >
