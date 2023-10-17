@@ -10,6 +10,12 @@ const SOCIAL_LINKS = [
     description: "Best place to keep yourself updated on whatever I'm up to",
   },
   {
+    name: "Youtube",
+    href: "https://www.youtube.com/@ProgressshGames/featured",
+    description:
+      "I haven't made videos yet, but I very much intend on making devlogs",
+  },
+  {
     name: "Newsletter",
     href: "https://progresssh.substack.com/",
     description: "Get updates about me",
@@ -51,7 +57,7 @@ const PROJECT_LINKS = [
     name: "Second Sight",
     href: "https://www.secondsight.app",
     description:
-      "Journaling website with an AI that is a tad over-enthusiastic",
+      "Journaling website with an AI (GPT-3 API) that is a tad over-enthusiastic",
   },
 ];
 
