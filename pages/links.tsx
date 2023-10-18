@@ -11,7 +11,7 @@ const SOCIAL_LINKS = [
   },
   {
     name: "Youtube",
-    href: "https://www.youtube.com/@ProgressshGames/featured",
+    href: "https://www.youtube.com/@progressSH/",
     description:
       "I haven't made videos yet, but I very much intend on making devlogs",
   },
