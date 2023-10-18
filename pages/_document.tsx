@@ -38,7 +38,7 @@ class MyDocument extends Document {
           />
           <meta
             property="og:description"
-            content="Progress.sh · Let's all do our best"
+            content="Progress.sh · Don't let go"
           />
           <meta property="og:type" content="website" />
 
@@ -48,17 +48,14 @@ class MyDocument extends Document {
           <meta name="twitter:title" content="Progress" />
           <meta
             name="twitter:description"
-            content="Progress.sh · Let's all do our best"
+            content="Progress.sh · Don't let go"
           />
           <meta
             name="twitter:image"
             content="https://firebasestorage.googleapis.com/v0/b/progress-sh-6b6d6.appspot.com/o/untitled_00000.jpg?alt=media&token=8a749d4f-dc7d-4011-8bb8-2cf80cd05c5b"
           />
 
-          <meta
-            name="description"
-            content="Progress.sh · Let's all do our best"
-          />
+          <meta name="description" content="Progress.sh · Don't let go" />
         </Head>
         <body className="h-full w-full">
           <Main />

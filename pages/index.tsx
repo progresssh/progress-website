@@ -63,7 +63,7 @@ export default function Homepage(props) {
                 PROGRESS
               </h1>
               <h2 className="text-[#FFD600] font-rajdhani font-light text-base md:text-lg">
-                Let&apos;s all do our best
+                Don&apos;t let go
               </h2>
             </div>
           </div>
