@@ -21,6 +21,11 @@ const SOCIAL_LINKS = [
     description: "Get updates about me",
   },
   {
+    name: "Bluesky",
+    href: "https://bsky.app/profile/progress.sh",
+    description: "Alternative to twitter",
+  },
+  {
     name: "Twitch",
     href: "https://twitch.tv/progress_sh",
     description: "I sometimes stream art or programming there",
