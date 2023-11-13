@@ -18,7 +18,7 @@ export default function Homepage(props) {
     <Layout title={title}>
       <div className="flex h-full flex-col p-2 md:p-0 justify-center bg-[#090909] origin-[50vw_50vh]">
         <div className="flex flex-col h-full md:flex-row md:justify-evenly justify-between items-center">
-          <div className="w-11/12 text-white flex flex-col text-sm md:w-36 h-1/4 md:m-0 self-center break-words justify-center  font-quantico hidden">
+          <div className="w-11/12 text-white flex flex-col text-sm md:w-36 h-1/4 md:m-0 self-center break-words justify-center  font-quantico">
             <div className=" text-xs text-left md:text-right flex w-full justify-evenly">
               <button
                 className={`w-full ${
@@ -59,7 +59,7 @@ export default function Homepage(props) {
               />
             </Link>
             <div className="md:absolute mt-4 bottom-5 self-center text-center">
-              <h1 className="font-rajdhani font-light text-3xl text-white hidden">
+              <h1 className="font-rajdhani font-light text-3xl text-white">
                 PROGRESS
               </h1>
               <h2 className="text-[#FFD600] font-rajdhani font-light text-base md:text-lg">
@@ -68,7 +68,7 @@ export default function Homepage(props) {
             </div>
           </div>
 
-          <div className="flex flex-col pl-4 pb-4 md:pb-0 md:h-auto text-sm md:m-0 md:w-40 self-start md:self-center font-quantico hidden">
+          <div className="flex flex-col pl-4 pb-4 md:pb-0 md:h-auto text-sm md:m-0 md:w-40 self-start md:self-center font-quantico">
             <h3 className="text-[#FFD600] text-xs mb-2">information</h3>
             <div className="text-white flex flex-col flex-grow md:flex-col space-y-2 md:space-y-2">
               <div className="space-x-8 md:flex md:flex-col md:space-x-0 md:space-y-2">
