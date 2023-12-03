@@ -12,7 +12,7 @@ export default function Homepage(props) {
   const title = "Progress";
   console.log(props);
 
-  const [isTransmission, setIsTransmission] = useState(true);
+  const [isTransmission, setIsTransmission] = useState(false);
 
   return (
     <Layout title={title}>
