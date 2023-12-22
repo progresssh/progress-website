@@ -53,6 +53,7 @@ export default function Homepage(props) {
                 autoPlay
                 loop
                 disableRemotePlayback={true}
+                disablePictureInPicture
                 playsInline
                 height={480}
                 width={480}
