@@ -21,18 +21,16 @@ export default function Homepage(props) {
           <div className="w-11/12 text-white flex flex-col text-sm md:w-36 h-1/4 md:m-0 self-center break-words justify-center  font-quantico">
             <div className=" text-xs text-left md:text-right flex w-full justify-evenly">
               <button
-                className={`w-full ${
-                  isTransmission ? "text-[#FFD600]" : "text-[#808080]"
-                }`}
+                className={`w-full ${isTransmission ? "text-[#FFD600]" : "text-[#808080] hover:animate-pulse hover:text-[#FFD600]"
+                  }`}
                 onClick={() => setIsTransmission(true)}
               >
                 transmissions
               </button>
               <span className="px-4">|</span>
               <button
-                className={`w-full ${
-                  !isTransmission ? "text-[#00FFFF]" : "text-[#808080]"
-                }`}
+                className={`w-full ${!isTransmission ? "text-[#00FFFF]" : "text-[#808080] hover:animate-pulse hover:text-[#00FFFF]"
+                  }`}
                 onClick={() => setIsTransmission(false)}
               >
                 journal
