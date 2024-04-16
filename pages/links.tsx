@@ -3,66 +3,14 @@ import Layout from "../components/layout";
 
 const TITLE = "Links";
 
-const SOCIAL_LINKS = [
+const WEBRING_LINKS = [
   {
-    name: "Twitter",
-    href: "https://twitter.com/progress_sh_",
-    description: "Best place to keep yourself updated on whatever I'm up to",
+    name: "apt-get",
+    href: "https://apt-get.xyz/",
   },
   {
-    name: "Youtube",
-    href: "https://www.youtube.com/@progressSH/",
-    description:
-      "I haven't made videos yet, but I very much intend on making devlogs",
-  },
-  {
-    name: "Newsletter",
-    href: "https://progresssh.substack.com/",
-    description: "Get updates about me",
-  },
-  {
-    name: "Bluesky",
-    href: "https://bsky.app/profile/progress.sh",
-    description: "Alternative to twitter",
-  },
-  {
-    name: "Twitch",
-    href: "https://twitch.tv/progress_sh",
-    description: "I sometimes stream art or programming there",
-  },
-  {
-    name: "Instagram",
-    href: "https://www.instagram.com/progress_sh_/",
-    description: "Twitter but I post stories there",
-  },
-  {
-    name: "Github",
-    href: "https://github.com/progresssh",
-    description: "Gaze upon my (dubious) code",
-  },
-  {
-    name: "Discord",
-    href: "https://discord.gg/Xp6HZXN6vq",
-    description: "My discord server",
-  },
-  {
-    name: "star@progress.sh",
-    href: "mailto:star@progress.sh",
-    description: "Feel free to send me an email!",
-  },
-];
-
-const PROJECT_LINKS = [
-  {
-    name: "Progress",
-    href: "https://www.progress.sh/",
-    description: "Tales of a wanderer striving to find their way",
-  },
-  {
-    name: "Second Sight",
-    href: "https://www.secondsight.app",
-    description:
-      "Journaling website with an AI (GPT-3 API) that is a tad over-enthusiastic",
+    name: "willow",
+    href: "https://willow.phantoma.online/",
   },
 ];
 
@@ -98,50 +46,21 @@ export default function LinkPage() {
                     <div className="md:flex md:flex-col text-gray-300 font-opensans space-y-6 leading-normal text-[0.87rem] ">
                       <div>
                         <h3 className="text-[#FFD600] text-lg font-normal  font-quantico pb-3">
-                          Socials
+                          Webring - Interesting people, friends, places.
                         </h3>
                         <nav>
-                          <ul className="space-y-4 ">
-                            {SOCIAL_LINKS.map((link, i) => {
+                          <ul className="flex space-x-4">
+                            {WEBRING_LINKS.map((link, i) => {
                               return (
                                 <li key={i}>
                                   <Link
                                     href={link.href}
-                                    className="text-[#FFD600] hover:underline font-bold italic"
+                                    className="text-[#ff4870] hover:text-[#ffffff] transition ease-in-out delay-50 font-bold italic"
                                     aria-label={`${link.name} link`}
                                     target="_blank"
                                   >
-                                    {link.name}
+                                    {`✦ ${link.name}`}
                                   </Link>
-                                  <span className="ml-2 text-gray-300 font-normal">
-                                    - {link.description}
-                                  </span>
-                                </li>
-                              );
-                            })}
-                          </ul>
-                        </nav>
-                      </div>
-                      <div>
-                        <h3 className="text-[#FFD600] text-lg font-normal  font-quantico py-3">
-                          Projects
-                        </h3>
-                        <nav>
-                          <ul className="space-y-4 ">
-                            {PROJECT_LINKS.map((link, i) => {
-                              return (
-                                <li key={i}>
-                                  <Link
-                                    href={link.href}
-                                    className="text-[#FFD600] hover:underline font-bold italic"
-                                    aria-label={`${link.name} link`}
-                                    target="_blank"
-                                  >
-                                    {link.name}
-                                  </Link>
-                                  <span className="ml-2 text-gray-300 font-normal">
-                                    - {link.description}
-                                  </span>
                                 </li>
                               );
                             })}
