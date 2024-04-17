@@ -12,6 +12,10 @@ const WEBRING_LINKS = [
     name: "willow",
     href: "https://willow.phantoma.online/",
   },
+  {
+    name: "wesl-ee",
+    href: "https://wesl.ee/",
+  }
 ];
 
 export default function LinkPage() {
