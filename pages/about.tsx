@@ -38,7 +38,7 @@ const SOCIAL_LINKS = [
   {
     name: "Discord",
     href: "https://discord.gg/Xp6HZXN6vq",
-    description: "My discord server",
+    description: "My discord server | or you may add me directly : progress.sh",
   },
   {
     name: "star@progress.sh",
