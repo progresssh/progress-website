@@ -5,9 +5,14 @@ const TITLE = "About";
 
 const SOCIAL_LINKS = [
   {
+    name: "star@progress.sh",
+    href: "mailto:star@progress.sh",
+    description: "Best place to keep yourself updated. PS: I love conversations, come chat!",
+  },
+  {
     name: "Twitter",
     href: "https://twitter.com/progress_sh_",
-    description: "Best place to keep yourself updated on whatever I'm up to",
+    description: "Second best place to keep yourself updated on whatever I'm up to",
   },
   {
     name: "Youtube",
@@ -18,7 +23,7 @@ const SOCIAL_LINKS = [
   {
     name: "Bluesky",
     href: "https://bsky.app/profile/progress.sh",
-    description: "Alternative to twitter",
+    description: "Alternative to Twitter",
   },
   {
     name: "Twitch",
@@ -40,18 +45,13 @@ const SOCIAL_LINKS = [
     href: "https://discord.gg/Xp6HZXN6vq",
     description: "My discord server | or you may add me directly : progress.sh",
   },
-  {
-    name: "star@progress.sh",
-    href: "mailto:star@progress.sh",
-    description: "Actual best place to keep yourself updated, I love conversations!",
-  },
 ];
 
 const PROJECT_LINKS = [
   {
     name: "Progress",
     href: "https://www.progress.sh/",
-    description: "Ramblings of a wanderer finding their way",
+    description: "A wandering star following its way",
   },
   {
     name: "Second Sight (shutdown)",

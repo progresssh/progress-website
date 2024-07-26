@@ -56,11 +56,11 @@ const Entry = (props: journalPost) => {
                 <div dangerouslySetInnerHTML={{ __html: content }}></div>
               </article>
             </main>
-            {/* <footer className=" font-quantico pb-8">
+            <footer className=" font-quantico pb-8">
               <Link
                 href={"https://progresssh.substack.com/"}
                 target="_blank"
-                aria-label="Subscribe to Newsletter"
+                aria-label="Link to Progress Newsletter"
                 className="text-[#00FFFF] text-base hover:font-bold"
               >
                 <svg
@@ -77,9 +77,9 @@ const Entry = (props: journalPost) => {
                     d="M17.25 8.25L21 12m0 0l-3.75 3.75M21 12H3"
                   />
                 </svg>
-                Subscribe to Progress
+                Link to Progress Newsletter
               </Link>
-            </footer> */}
+            </footer>
           </div>
         </div>
       </div>
