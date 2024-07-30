@@ -39,7 +39,7 @@ export const getStaticProps: GetStaticProps = async () => {
 
   const querySnapshot = await getDocs(collection(db, "journal"));
   querySnapshot.forEach((doc) => {
-    const newData = { key: doc.id, ...doc.data() } as journalPost;
+    const newData = { key: doc.id, ...doc.data(), mode: 'journal' } as journalPost;
     data.push(newData);
   });
 
