@@ -1,15 +1,6 @@
-import { format, fromUnixTime } from "date-fns";
 import { collection, doc, getDoc, getDocs } from "firebase/firestore";
 import { db } from "../../firebase";
-import { journalPost } from "../../types/journalPost";
-import StarterKit from "@tiptap/starter-kit";
-import { generateHTML } from "@tiptap/html";
-import Layout from "../../components/layout";
-import Link from "next/link";
-import TiptapLink from "@tiptap/extension-link";
-import Image from "@tiptap/extension-image";
 import Post from "../../components/post";
-
 
 Post;
 
@@ -17,7 +8,7 @@ export async function getStaticPaths() {
   const data = [];
   const querySnapshot = await getDocs(collection(db, "transmissions"));
   querySnapshot.forEach((doc) => {
-    const newData = { id: doc.id, ...doc.data(), mode: 'transmissions' };
+    const newData = { id: doc.id, ...doc.data() };
     data.push(newData);
   });
 
@@ -38,7 +29,7 @@ export async function getStaticProps(context) {
   const docSnap = await getDoc(docRef);
   const data = docSnap.data();
 
-  return { props: data };
+  return { props: { ...data, mode: 'transmissions' } };
 }
 
 export default Post;
