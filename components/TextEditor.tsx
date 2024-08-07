@@ -18,14 +18,14 @@ const FixedMenu = ({
   setPostMode,
 }: {
   editor: Editor;
-  setPostMode: Dispatch<SetStateAction<"journal" | "transmissions">>;
+  setPostMode: Dispatch<SetStateAction<"journal" | "transmissions" | "star">>;
 }) => {
   const handleModeChange = (e: ChangeEvent<HTMLSelectElement>) => {
     const mode = e.target.value;
-    if (mode === "transmissions" || mode === "journal") {
+    if (mode === "transmissions" || mode === "journal" || mode === "star") {
       setPostMode(mode);
     } else {
-      console.error("incorrect mode: must be transmissions or journal");
+      console.error("incorrect mode: must be transmissions | journal | star");
     }
   };
   const handleBoldButton = () => {
@@ -97,6 +97,7 @@ const FixedMenu = ({
         <select name="mode" onChange={handleModeChange}>
           <option value="journal">journal</option>
           <option value="transmissions">transmissions</option>
+          <option className="text-rose-600 bg-black" value="star">star</option>
         </select>
       </div>
     </div>
@@ -105,7 +106,7 @@ const FixedMenu = ({
 
 const TextEditor = () => {
   const { postDocument, isProgress } = useAuth();
-  const [postMode, setPostMode] = useState<"journal" | "transmissions">(
+  const [postMode, setPostMode] = useState<"journal" | "transmissions" | "star">(
     "journal"
   );
 

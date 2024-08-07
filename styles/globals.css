@@ -25,6 +25,17 @@
   border-color: black;
 }
 
+.star-masonry-grid_column {
+  padding-left: 15px; /* gutter size */
+}
+.star-masonry-grid_column > div {
+  border-width: 2px;
+  border-color: rgb(225, 29, 72);
+}
+.star-masonry-grid_column > div:hover {
+  animation: pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+}
+
 .is-active {
   font-weight: bold;
 }

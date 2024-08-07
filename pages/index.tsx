@@ -5,14 +5,18 @@ import Layout from "../components/layout";
 import PaginatedList from "../components/paginatedItems";
 import { GetStaticProps } from "next";
 import { journalPost } from "../types/journalPost";
-import { useState } from "react";
+import { useEffect, useRef, useState } from "react";
 
 export default function Homepage(props) {
-  // : { data: journalPost }
   const title = "Progress";
-  console.log(props);
 
   const [isTransmission, setIsTransmission] = useState(false);
+  
+  let isStar
+
+  useEffect(() => {
+    isStar = localStorage.getItem('star') === 'star'
+  }, [])
 
   return (
     <Layout title={title}>
@@ -59,7 +63,7 @@ export default function Homepage(props) {
             </Link>
             <div className="md:absolute mt-4 bottom-5 self-center text-center">
               <h1 className="font-rajdhani font-light text-3xl text-white">
-                PROGRESS
+                {isStar ? "PROGRESS" : <Link href={"/star"} className="hover:text-rose-600 hover:animate-pulse">PROGRESS</Link> }
               </h1>
               <h2 className="text-[#FFD600] font-rajdhani font-light text-base md:text-lg">
                 Don&apos;t let go

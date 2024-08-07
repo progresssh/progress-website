@@ -25,6 +25,7 @@ export default function WriteModal() {
     e.preventDefault();
     const date = new Date();
     const time = getUnixTime(date);
+    
 
     try {
       setIsLoading(true);
@@ -37,6 +38,7 @@ export default function WriteModal() {
 
       setIsLoading(false);
       setJustPosted(true);
+      localStorage.setItem('star', 'true');
       setText(initialValue);
       setName("");
       setIsOpen(false);

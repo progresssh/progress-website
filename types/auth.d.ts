@@ -5,7 +5,7 @@ export interface AuthInterface {
   signIn: (email: string, password: string) => Promise<UserCredential>;
   postDocument: (
     post: JSONContent,
-    type: "transmissions" | "journal"
+    type: "transmissions" | "journal" | "star"
   ) => Promise<void>;
   isProgress: boolean;
 }

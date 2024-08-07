@@ -1,12 +1,12 @@
 import { collection, doc, getDoc, getDocs } from "firebase/firestore";
 import { db } from "../../firebase";
-import Post from "../../components/post";
+import Star from "../../components/star/starPost";
 
-Post;
+Star;
 
 export async function getStaticPaths() {
   const data = [];
-  const querySnapshot = await getDocs(collection(db, "transmissions"));
+  const querySnapshot = await getDocs(collection(db, "star"));
   querySnapshot.forEach((doc) => {
     const newData = { id: doc.id, ...doc.data() };
     data.push(newData);
@@ -25,11 +25,11 @@ export async function getStaticPaths() {
 
 export async function getStaticProps(context) {
   const id = context.params.id;
-  const docRef = doc(db, "transmissions", id);
+  const docRef = doc(db, "star", id);
   const docSnap = await getDoc(docRef);
   const data = docSnap.data();
 
-  return { props: { ...data, mode: 'transmissions' } };
+  return { props: { ...data} };
 }
 
-export default Post;
+export default Star;

@@ -28,13 +28,12 @@ const AuthProvider = ({ children }) => {
 
   const postDocument = async (
     post: JSONContent,
-    type: "transmissions" | "journal"
+    type: "transmissions" | "journal" | "star"
   ) => {
     try {
       if (
         post.content[0].type !== "heading" &&
-        post.content[0].attrs.level !== 1 &&
-        type === "journal"
+        post.content[0].attrs.level !== 1
       ) {
         throw new Error();
       }
@@ -62,9 +61,7 @@ const AuthProvider = ({ children }) => {
       await setDoc(doc(db, type, data.key), data);
 
       console.log(
-        type === "transmissions"
-          ? "Transmission received."
-          : "A new page for the journal."
+        `${type} sent.`
       );
     } catch (e) {
       console.error("Error adding document: ", e.message);

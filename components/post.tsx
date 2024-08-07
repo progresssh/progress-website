@@ -11,7 +11,6 @@ import Layout from "./layout";
 const Post = (props: journalPost) => {
   const data = props;
   const mode = data.mode;
-  console.table(props);
 
   const content = generateHTML(data.body, [
     StarterKit.configure({
