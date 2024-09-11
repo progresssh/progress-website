@@ -11,12 +11,11 @@ export default function Homepage(props) {
   const title = "Progress";
 
   const [isTransmission, setIsTransmission] = useState(false);
-  
-  let isStar
+  const [isStar, setIsStar] = useState(false);
 
   useEffect(() => {
-    isStar = localStorage.getItem('star') === 'star'
-  }, [])
+    setIsStar(localStorage.getItem("star") === "true");
+  }, []);
 
   return (
     <Layout title={title}>
@@ -25,16 +24,22 @@ export default function Homepage(props) {
           <div className="w-11/12 text-white flex flex-col text-sm md:w-36 h-1/4 md:m-0 self-center break-words justify-center  font-quantico">
             <div className=" text-xs text-left md:text-right flex w-full justify-evenly">
               <button
-                className={`w-full ${isTransmission ? "text-[#FFD600]" : "text-[#808080] hover:animate-pulse hover:text-[#FFD600]"
-                  }`}
+                className={`w-full ${
+                  isTransmission
+                    ? "text-[#FFD600]"
+                    : "text-[#808080] hover:animate-pulse hover:text-[#FFD600]"
+                }`}
                 onClick={() => setIsTransmission(true)}
               >
                 transmissions
               </button>
               <span className="px-4">|</span>
               <button
-                className={`w-full ${!isTransmission ? "text-[#00FFFF]" : "text-[#808080] hover:animate-pulse hover:text-[#00FFFF]"
-                  }`}
+                className={`w-full ${
+                  !isTransmission
+                    ? "text-[#00FFFF]"
+                    : "text-[#808080] hover:animate-pulse hover:text-[#00FFFF]"
+                }`}
                 onClick={() => setIsTransmission(false)}
               >
                 journal
@@ -63,7 +68,16 @@ export default function Homepage(props) {
             </Link>
             <div className="md:absolute mt-4 bottom-5 self-center text-center">
               <h1 className="font-rajdhani font-light text-3xl text-white">
-                {isStar ? "PROGRESS" : <Link href={"/star"} className="hover:text-rose-600 hover:animate-pulse">PROGRESS</Link> }
+                {isStar ? (
+                  <Link
+                    href={"/star"}
+                    className="hover:text-rose-600 hover:animate-pulse"
+                  >
+                    PROGRESS
+                  </Link>
+                ) : (
+                  "PROGRESS"
+                )}
               </h1>
               <h2 className="text-[#FFD600] font-rajdhani font-light text-base md:text-lg">
                 Don&apos;t let go
