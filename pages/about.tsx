@@ -45,6 +45,11 @@ const SOCIAL_LINKS = [
     href: "https://discord.gg/Xp6HZXN6vq",
     description: "My discord server | or you may add me directly : progress.sh",
   },
+  {
+    name: "Ko-fi",
+    href: "https://ko-fi.com/progress_sh",
+    description: "Please, only donate if I or what I have done has been helpful or of value to you.",
+  },
 ];
 
 const PROJECT_LINKS = [
