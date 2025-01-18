@@ -92,6 +92,9 @@ export default function Homepage(props) {
                 <Link href="/about" aria-label="About Page">
                   About
                 </Link>
+                <Link href="/portfolio" aria-label="Portfolio Page">
+                  Portfolio
+                </Link>
                 <Link href="/links" aria-label="Links Page">
                   Links
                 </Link>

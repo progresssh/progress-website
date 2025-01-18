@@ -8,6 +8,8 @@
   bottom: 0;
   left: 0;
   right: 0;
+  @apply h-full;
+  @apply w-full;
 }
 
 .my-masonry-grid {
@@ -16,6 +18,7 @@
   display: flex;
   margin-left: -15px; /* gutter size offset */
   width: auto;
+  height: auto;
 }
 .my-masonry-grid_column {
   padding-left: 15px; /* gutter size */
@@ -23,6 +26,10 @@
 .my-masonry-grid_column > div {
   border-width: 2px;
   border-color: black;
+}
+.my-masonry-grid_column_portfolio > div {
+  border-width: 2px;
+  border-color: white;
 }
 
 .star-masonry-grid_column {

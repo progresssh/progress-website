@@ -17,17 +17,25 @@ const Card = ({ post }: { post: OasisPost }) => {
       <div>
         <article>
           {content?.map((paragraph) => {
-            return paragraph.children.map(({ text }) => {
-              if (text === "") {
-                // eslint-disable-next-line
-                return <br />;
-              }
+            if (paragraph.children[0].text == "" && content.length === 1) {
               return (
-                <p className="font-quantico text-base" key={text}>
-                  {text}
-                </p>
+                <span key={"star"} className="flex justify-center">
+                  ✦
+                </span>
               );
-            });
+            } else {
+              return paragraph.children.map(({ text }) => {
+                if (text === "") {
+                  // eslint-disable-next-line
+                  return <br />;
+                }
+                return (
+                  <p className="font-quantico text-base" key={text}>
+                    {text}
+                  </p>
+                );
+              });
+            }
           })}
         </article>
       </div>
